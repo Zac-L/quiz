@@ -10,19 +10,19 @@ Once their name is submitted, the user is presented with a trivia question and f
 Though simple at its core, this game will allow the team to add features to make it more interesting.
 
 # Stretch Goals
-*Allow up to 4 players in a game. Players would take turns playing each round, and would be prompted with different questions. A question will only appear once per game.
+* Allow up to 4 players in a game. Players would take turns playing each round, and would be prompted with different questions. A question will only appear once per game.
 
-*Allow players to choose an avatar.
+* Allow players to choose an avatar.
 
-*Allow players to choose a difficulty setting.
+* Allow players to choose a difficulty setting.
 
-*Display a "high score" table once the game is finished. If multiple players, show which player did best. High player scores are saved to localStorage to be displayed in future games.
+* Display a "high score" table once the game is finished. If multiple players, show which player did best. High player scores are saved to localStorage to be displayed in future games.
 
-*The player will only have a set amount of time to answer each question. The amount of time would scale to the chosen difficulty level.
+* The player will only have a set amount of time to answer each question. The amount of time would scale to the chosen difficulty level.
 
-*Divide the game into multiple rounds (for example, a full game can be 3 rounds of 3 questions each). Each round can have its own difficulty and/or subject (subjects can be either randomly determined, or chosen by the player). The number of rounds in a game can be determined by the player at the beginning of the game. 
+* Divide the game into multiple rounds (for example, a full game can be 3 rounds of 3 questions each). Each round can have its own difficulty and/or subject (subjects can be either randomly determined, or chosen by the player). The number of rounds in a game can be determined by the player at the beginning of the game. 
 
-*Add CSS polish such as intro/outro animations and mouseOver effects.
+* Add CSS polish such as intro/outro animations and mouseOver effects.
 
 
 
