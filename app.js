@@ -49,12 +49,13 @@ function saveToLocal(key, value ) {
 function getFromLocal( key ) {
     return JSON.parse( localStorage.getItem( key ) );
 }
-
-function playerSubmit () {
+var form = document.getElementById( 'new-player' );
+form.addEventListener( 'submit', function(){
     event.preventDefault();
-    var playerName = document.getElementById('submit').value;
-    console.log(document.getElementById('submit'));
-};
+    playerNames.push(this.name.value);
+    console.log(this.name.value);
+    event.target.reset();
+});
 
 // var form = document.getElementById('new-player');
 // submit = document.getElementById('submit-name');
