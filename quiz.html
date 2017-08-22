@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../sam-skeleton/css/normalize.css"> -->
     </head>
     <body>
-        <header>
+         <header>
             <h1>Adventure Quiz!</h1>
             <nav>
                 <ul>
@@ -19,34 +19,24 @@
                 </ul>
             </nav>
         </header>
-        <section>
+        <form id="question-form" action="">
+            <fieldset>
+                <legend>Quiz</legend>
 
-        </section>
+                <label for="questions">What is the answer to question 1?</label>
 
-    <form id="new-player" action="">
-        <fieldset>
-            <legend>New Player</legend>
+                <input type = "radio" name = "answer1" id = "answer1" > answer1</input>
 
-            <label for="name">Enter Player Name</label>
-            <input type="text" name="name" id="submit-input" placeholder="Enter Name">
+                <input type = "radio" name = "answer2" id = "answer2" > answer2</input>
 
-             <button id="submit-name" type="submit" onclick="window.open('quiz.html');" >GO!</button> 
+                <input type = "radio" name = "answer3" id = "answer3" > answer3</input>
 
+                <input type = "radio" name = "answer4" id = "answer4" > answer4</input>
 
-        </fieldset>
-    </form>
-    <!-- <form id="return-player" action="">
-        <fieldset>
-            <legend>Returning Player</legend>
+                <button id="submit-answer" type="submit" >submit</button> 
 
-            <label for="">Enter Player Name</label>
-            <input type="text" name="" id="" placeholder="Enter Name">
-
-            <button type="submit">GO!</button>
-
-        </fieldset>
-    </form> -->
-
+            </fieldset>
+        </form>
         <script src="app.js"></script>
     </body>
 </html>
