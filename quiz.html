@@ -19,15 +19,24 @@
                 </ul>
             </nav>
         </header>
-        <form action="">
+        <form id="question-form" action="">
             <fieldset>
-                <legend></legend>
+                <legend>Quiz</legend>
 
-                <label for=""></label>
-                <input type="text">
+                <label for="questions">What is the answer to question 1?</label>
+
+                <input type = "radio" name = "answer1" id = "answer1" > answer1</input>
+
+                <input type = "radio" name = "answer2" id = "answer2" > answer2</input>
+
+                <input type = "radio" name = "answer3" id = "answer3" > answer3</input>
+
+                <input type = "radio" name = "answer4" id = "answer4" > answer4</input>
+
+                <button id="submit-answer" type="submit" >submit</button> 
 
             </fieldset>
         </form>
-        <!-- <script src="quiz.js"></script> -->
+        <script src="app.js"></script>
     </body>
 </html>

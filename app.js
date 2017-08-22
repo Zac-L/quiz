@@ -36,14 +36,14 @@ function Round (activePlayer, numberOfQuestions, numberOfQuestionsAsked) {
     this.numberOfQuestions = numberOfQuestions;
     this.numberOfQuestionsAsked = numberOfQuestionsAsked;
     updateScore();
-    askQuestion();
+    // askQuestion();
     checkAnswer();
 
 }
 
 function saveToLocal(key, value ) {
     var localSavedData = JSON.stringify( value );
-    localStorage.setItem( '', localSavedData );
+    localStorage.setItem( key, localSavedData );
 }
 
 function getFromLocal( key ) {
@@ -55,18 +55,29 @@ form.addEventListener( 'submit', function(){
     playerNames.push(this.name.value);
     console.log(this.name.value);
     event.target.reset();
+
+    saveToLocal( 'playerNames', playerNames );
+
 });
 
-// var form = document.getElementById('new-player');
-// submit = document.getElementById('submit-name');
-// form.onsubmit = function() {
-//     var variable = submit.value;
-//     alert(variable);
-// };
+/////////////////////
+///quiz
+////////////////////
+var tempQuestions = ['What is the answer to question 1?',['bunny', 'dog','cat','bird'], 'dog'];
 
-// var playerSubmit = document.getElementById('new-player');
-// playerSubmit.addEventListener('submit', function(){
-//     var nameValue = document.getElementById('submit-input').value;
-//     console.log(nameValue);
-//     return nameValue;
+//tempQuestins[1][0];
+
+function askQuestion(){
+var quiz = document.getElementById( 'question-form' );
+
+
+}
+// quiz.addEventListener( 'submit', function(){
+//     event.preventDefault();
+//     playerNames.push(this.name.value);
+//     console.log(this.name.value);
+//     event.target.reset();
+
+//     saveToLocal( 'playerNames', playerNames );
+
 // });
