@@ -21,7 +21,6 @@ var allQuestions = [
     ['What is the answer to question 10?',['bunny', 'dog','cat','bird'], 0],
     ['What is the answer to question 11?',['billy', 'dog','cat','bird'], 2],
     ['What is the answer to question 12?',['bob', 'dog','cat','bird'], 3],
-
 ];
 
 function saveToLocal(key, value ) {
@@ -79,7 +78,7 @@ el.addEventListener('submit', function(){
     else if (numberOfRounds == 0){
         saveToLocal('playerOne', player);
         console.log(localStorage.playerScore);
-        // window.location.href = 'contact.html';
+        window.location.href = 'contact.html';
         alert(player.score);
     }
 
@@ -93,6 +92,9 @@ el.addEventListener('submit', function(){
 });
 
 function newQuestion(){
+    //Set html element's inner text to number of rounds in game
+    //TO DO: get number of rounds to display correctly as "Round 1, Round 2,..."
+    document.getElementById('roundNumber').innerText = numberOfRounds;
     randomQuestionGen();
     askQuestion();
 }
