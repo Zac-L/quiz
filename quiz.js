@@ -5,19 +5,16 @@ var player = {
     score: 0,
 };
 
+var allQuestions = [
+    ['What is the answer to question 1?',['bunny', 'dog','cat','bird'], 0],
+    ['What is the answer to question 2?',['billy', 'dog','cat','bird'], 2],
+    ['What is the answer to question 3?',['bob', 'dog','cat','bird'], 3],
+    ['What is the answer to question 4?',['joe', 'dog','cat','bird'], 1]
+];
+
 function getFromLocal( key ) {
     return JSON.parse( localStorage.getItem( key ) );
 }
-
-var allQuestions = [
-    ['What is the answer to question 1?',['bunny', 'dog','cat','bird'], 0],
-
-    ['What is the answer to question 2?',['billy', 'dog','cat','bird'], 2],
-
-    ['What is the answer to question 3?',['bob', 'dog','cat','bird'], 3],
-
-    ['What is the answer to question 4?',['joe', 'dog','cat','bird'], 1]
-];
 
 function randomQuestionGen() {
     currentQuestion = allQuestions [Math.floor(Math.random() * (allQuestions.length))];
@@ -25,24 +22,18 @@ function randomQuestionGen() {
 };
 
 function askQuestion() {
-    var answer1Element = document.getElementById( 'answer1' );
-    answer1Element.innerText = currentQuestion[1][0];
+    //Populate Label elements with four possible answers to a question
+    for (var i = 0; i < 4; i++){
+        var answerElement = document.getElementById('answer' + ( i + 1 ));
+        answerElement.innerText = currentQuestion[1][i];
+    }
 
-    var answer2Element = document.getElementById( 'answer2' );
-    answer2Element.innerText = currentQuestion[1][1];
-
-    var answer3Element = document.getElementById( 'answer3' );
-    answer3Element.innerText = currentQuestion[1][2];
-
-    var answer4Element = document.getElementById( 'answer4' );
-    answer4Element.innerText = currentQuestion[1][3];
-
+    //Add question string to DOM
     var questionElement = document.getElementById('questions');
     questionElement.innerText = currentQuestion [0];
-
+    
+    //Event listener to check status of correct radio button, return score depending on user input
     var el = document.getElementById('question-form');
-
-     //Event listener to check status of correct radio button, return score depending on user input
     el.addEventListener('submit', function(){
         event.preventDefault();
         var el = document.getElementsByClassName('questionButton');
@@ -61,15 +52,12 @@ function askQuestion() {
         var spliced = allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
         console.log(spliced);
         
-        if (allQuestions.length > 0){  
+        if (allQuestions.length > 0){
             randomQuestionGen();
-            askQuestion();  
+            askQuestion();
         }
 
         else {alert(player.score);}
-
-        // randomQuestionGen();
-        // askQuestion();  
               
     });
 }
