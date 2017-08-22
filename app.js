@@ -60,24 +60,3 @@ form.addEventListener( 'submit', function(){
 
 });
 
-/////////////////////
-///quiz
-////////////////////
-var tempQuestions = ['What is the answer to question 1?',['bunny', 'dog','cat','bird'], 'dog'];
-
-//tempQuestins[1][0];
-
-function askQuestion(){
-var quiz = document.getElementById( 'question-form' );
-
-
-}
-// quiz.addEventListener( 'submit', function(){
-//     event.preventDefault();
-//     playerNames.push(this.name.value);
-//     console.log(this.name.value);
-//     event.target.reset();
-
-//     saveToLocal( 'playerNames', playerNames );
-
-// });
