@@ -10,7 +10,16 @@ var allQuestions = [
     ['What is the answer to question 1?',['bunny', 'dog','cat','bird'], 0],
     ['What is the answer to question 2?',['billy', 'dog','cat','bird'], 2],
     ['What is the answer to question 3?',['bob', 'dog','cat','bird'], 3],
-    ['What is the answer to question 4?',['joe', 'dog','cat','bird'], 1]
+    ['What is the answer to question 4?',['joe', 'dog','cat','bird'], 1],
+    ['What is the answer to question 5?',['bunny', 'dog','cat','bird'], 0],
+    ['What is the answer to question 6?',['billy', 'dog','cat','bird'], 2],
+    ['What is the answer to question 7?',['bob', 'dog','cat','bird'], 3],
+    ['What is the answer to question 8?',['bob', 'dog','cat','bird'], 3],
+    ['What is the answer to question 9?',['joe', 'dog','cat','bird'], 1],
+    ['What is the answer to question 10?',['bunny', 'dog','cat','bird'], 0],
+    ['What is the answer to question 11?',['billy', 'dog','cat','bird'], 2],
+    ['What is the answer to question 12?',['bob', 'dog','cat','bird'], 3],
+
 ];
 
 function saveToLocal(key, value ) {
@@ -69,7 +78,6 @@ el.addEventListener('submit', function(){
         alert(player.score);
     }
 });
-
 
 randomQuestionGen();
 askQuestion();
