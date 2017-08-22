@@ -1,5 +1,21 @@
 var currentQuestion = [];
-var playerScore = 0; //Temporary global variable
+
+// function Player (name, score, consecutiveAnswers) {
+//     this.name = name;
+//     this.score = score;
+//     this.consecutiveAnswers = consecutiveAnswers;
+//     getUserName();
+
+// }
+
+var player = {
+    name: getFromLocal('playerNames'),
+    score: 0,
+};
+
+function getFromLocal( key ) {
+    return JSON.parse( localStorage.getItem( key ) );
+}
 
 var allQuestions = [
     ['What is the answer to question 1?',['bunny', 'dog','cat','bird'], 0],
@@ -39,14 +55,17 @@ function askQuestion() {
         event.preventDefault();
         var el = document.getElementsByClassName('questionButton');
         if (el[currentQuestion[2]].checked){
-            playerScore++;
+            player.score++;
             console.log('player is right');
         }
         else {
-            playerScore--;
+            player.score--;
             console.log('player is wrong');
         }
-
+        
+        event.target.reset();
+        randomQuestionGen();
+        askQuestion();        
     });
 }
 
