@@ -79,8 +79,8 @@ el.addEventListener('submit', function(){
     else if (numberOfRounds == 0){
         saveToLocal('playerOne', player);
         console.log(localStorage.playerScore);
-        // window.location.href = 'contact.html';
-        alert(player.score);
+        window.location.href = 'score.html';
+        // alert(player.score);
     }
 
     //If there are no more questions in the round
