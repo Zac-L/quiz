@@ -2,16 +2,16 @@ var tempQuestions = ['What is the answer to question 1?',['bunny', 'dog','cat','
 
 function askQuestion() {
     var answer1Element = document.getElementById( 'answer1' );
-    answer1Element.innerText = 'TEST';
+    answer1Element.innerText = tempQuestions[1][0];
 
     var answer2Element = document.getElementById( 'answer2' );
-    answer2Element.innerText = tempQuestions[1][0];
+    answer2Element.innerText = tempQuestions[1][1];
 
     var answer3Element = document.getElementById( 'answer3' );
-    answer3Element.innerText = tempQuestions[1][0];
+    answer3Element.innerText = tempQuestions[1][2];
 
     var answer4Element = document.getElementById( 'answer4' );
-    answer4Element.innerText = tempQuestions[1][0];
+    answer4Element.innerText = tempQuestions[1][3];
 
 }
 // quiz.addEventListener( 'submit', function(){
