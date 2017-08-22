@@ -1,5 +1,6 @@
 var currentQuestion = [];
 var questionsAsked = 0;
+
 var player = {
     name: getFromLocal('playerNames'),
     score: 0,
@@ -11,6 +12,11 @@ var allQuestions = [
     ['What is the answer to question 3?',['bob', 'dog','cat','bird'], 3],
     ['What is the answer to question 4?',['joe', 'dog','cat','bird'], 1]
 ];
+
+function saveToLocal(key, value ) {
+    var localSavedData = JSON.stringify( value );
+    localStorage.setItem( key, localSavedData );
+}
 
 function getFromLocal( key ) {
     return JSON.parse( localStorage.getItem( key ) );
@@ -51,15 +57,19 @@ el.addEventListener('submit', function(){
     event.target.reset();
     var spliced = allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
     console.log(spliced);
-    if (allQuestions.length > 0){
+    if (questionsAsked < 3 ){
         randomQuestionGen();
         askQuestion();
     }
 
     else {
+        saveToLocal('playerOne', player);
+        console.log(localStorage.playerScore);
         // window.location.href = 'contact.html';
         alert(player.score);
     }
 });
+
+
 randomQuestionGen();
 askQuestion();
