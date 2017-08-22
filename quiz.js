@@ -31,36 +31,35 @@ function askQuestion() {
     //Add question string to DOM
     var questionElement = document.getElementById('questions');
     questionElement.innerText = currentQuestion [0];
-    
-    //Event listener to check status of correct radio button, return score depending on user input
-    var el = document.getElementById('question-form');
-    el.addEventListener('submit', function(){
-        event.preventDefault();
-        var el = document.getElementsByClassName('questionButton');
-        if (el[currentQuestion[2]].checked){
-            player.score++;
-            console.log('player is right');
-        }
-        else {
-            player.score--;
-            console.log('player is wrong');
 
-            questionsAsked++;
-        }
-        
-        event.target.reset();
-        var spliced = allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
-        console.log(spliced);
-        
-        if (allQuestions.length > 0){
-            randomQuestionGen();
-            askQuestion();
-        }
-
-        else {alert(player.score);}
-              
-    });
 }
+//Event listener to check status of correct radio button, return score depending on user input
+var el = document.getElementById('question-form');
+el.addEventListener('submit', function(){
+    event.preventDefault();
+    var el = document.getElementsByClassName('questionButton');
+    if (el[currentQuestion[2]].checked){
+        player.score++;
+        console.log('player is right');
+    }
+    else {
+        player.score--;
+        console.log('player is wrong');
 
+        questionsAsked++;
+    }
+    event.target.reset();
+    var spliced = allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
+    console.log(spliced);
+    if (allQuestions.length > 0){
+        randomQuestionGen();
+        askQuestion();
+    }
+
+    else {
+        // window.location.href = 'contact.html';
+        alert(player.score);
+    }
+});
 randomQuestionGen();
 askQuestion();
