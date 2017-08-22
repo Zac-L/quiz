@@ -1,5 +1,13 @@
 var currentQuestion = [];
-var playerScore = 0; //Temporary global variable
+var questionsAsked = 0;
+var player = {
+    name: getFromLocal('playerNames'),
+    score: 0,
+};
+
+function getFromLocal( key ) {
+    return JSON.parse( localStorage.getItem( key ) );
+}
 
 var allQuestions = [
     ['What is the answer to question 1?',['bunny', 'dog','cat','bird'], 0],
@@ -34,30 +42,37 @@ function askQuestion() {
 
     var el = document.getElementById('question-form');
 
-    //Event listener to check status of correct radio button, return score depending on user input
+     //Event listener to check status of correct radio button, return score depending on user input
     el.addEventListener('submit', function(){
         event.preventDefault();
         var el = document.getElementsByClassName('questionButton');
         if (el[currentQuestion[2]].checked){
-            playerScore++;
+            player.score++;
             console.log('player is right');
         }
         else {
-            playerScore--;
+            player.score--;
             console.log('player is wrong');
+
+            questionsAsked++;
+        }
+        
+        event.target.reset();
+        var spliced = allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
+        console.log(spliced);
+        
+        if (allQuestions.length > 0){  
+            randomQuestionGen();
+            askQuestion();  
         }
 
+        else {alert(player.score);}
+
+        // randomQuestionGen();
+        // askQuestion();  
+              
     });
 }
 
-// quiz.addEventListener( 'submit', function(){
-//     event.preventDefault();
-//     playerNames.push(this.name.value);
-//     console.log(this.name.value);
-//     event.target.reset();
-
-//     saveToLocal( 'playerNames', playerNames );
-
-// });
 randomQuestionGen();
 askQuestion();

@@ -16,13 +16,13 @@ function Game (difficulty, numberOfRounds, roundsPlayed, askedQuestions) {
 
 }
 
-function Player (name, score, consecutiveAnswers) {
-    this.name = name;
-    this.score = score;
-    this.consecutiveAnswers = consecutiveAnswers;
-    getUserName();
+// function Player (name, score, consecutiveAnswers) {
+//     this.name = name;
+//     this.score = score;
+//     this.consecutiveAnswers = consecutiveAnswers;
+//     getUserName();
 
-}
+// }
 
 function Question (question, answer, subject) {
     this.question = question;
