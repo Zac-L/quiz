@@ -20,7 +20,6 @@ function Player (name) {
     this.score = 0;
     // this.consecutiveAnswers = consecutiveAnswers;
     // getUserName();
-
 }
 
 function Question (question, answer, subject) {

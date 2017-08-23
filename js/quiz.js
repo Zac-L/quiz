@@ -4,10 +4,7 @@ var questionsInRound = 2;
 var questionsAsked = 0;
 var roundsCompleted = 0;
 
-var player = {
-    name: getFromLocal('playerOne').name,
-    score: 0,
-};
+var player = getFromLocal('playerOne');
 
 var allQuestions = [
     ['What is the answer to question 1?',['bunny', 'dog','cat','bird'], 0],
