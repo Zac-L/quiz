@@ -73,38 +73,34 @@ el.addEventListener('submit', function(){
     var spliced = allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
 
     //If there are still questions in the round
-    if (questionsAsked < questionsInRound ){
+    if (questionsAsked < questionsInRound){
         newQuestion();
-    }
-
-    //If the active player has completed all questions in the round
-    else if (questionsAsked === questionsInRound){
-        console.log('new player start');
-        activePlayer++;
     }
 
     //If there are no more rounds left
     else if (numberOfRounds === 1){
-        //TO DO: Change this to push allPlayers to localStorage
-        saveToLocal('playerOne', player);
-        console.log(localStorage.playerScore);
-
+        saveToLocal('allPlayers', allPlayers);
         window.location.href = 'score.html';
     }
 
-    //If there are no more questions in the round
+    //If the active player has completed all questions in the round
+    else if ((questionsAsked === questionsInRound) && (numberOfRounds < 1)){
+        activePlayer++;
+        questionsAsked = 0;
+        newQuestion();
+    }
+
+    //If all players have answered questions in a round
     else {
         numberOfRounds--;
         roundsCompleted++;
         questionsAsked = 0;
         newQuestion();
     }
-    console.log('Question: ' + (questionsInRound - questionsAsked) + '\n Round: ' + (numberOfRounds));
 });
 
 function newQuestion(){
-    document.getElementById('roundNumber').innerText = roundsCompleted + 1;
-    console.log('Player ' + allPlayers[activePlayer].name + '\'s turn' );
+    console.log('Question: ' + (questionsInRound - questionsAsked) + '\n Round: ' + (numberOfRounds) + '\n Player: ' + allPlayers[activePlayer].name);
     randomQuestionGen();
     askQuestion();
 }
