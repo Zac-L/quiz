@@ -24,6 +24,13 @@ var allQuestions = [
     ['What is the answer to question 8?',['bob', 'dog','cat','bird'], 3],
     ['What is the answer to question 9?',['joe', 'dog','cat','bird'], 1],
     ['What is the answer to question 10?',['bunny', 'dog','cat','bird'], 0],
+    ['What is the answer to question 4?',['joe', 'dog','cat','bird'], 1],
+    ['What is the answer to question 5?',['bunny', 'dog','cat','bird'], 0],
+    ['What is the answer to question 6?',['billy', 'dog','cat','bird'], 2],
+    ['What is the answer to question 7?',['bob', 'dog','cat','bird'], 3],
+    ['What is the answer to question 8?',['bob', 'dog','cat','bird'], 3],
+    ['What is the answer to question 9?',['joe', 'dog','cat','bird'], 1],
+    ['What is the answer to question 10?',['bunny', 'dog','cat','bird'], 0],
     ['What is the answer to question 11?',['billy', 'dog','cat','bird'], 2],
     ['What is the answer to question 12?',['bob', 'dog','cat','bird'], 3],
 ];
@@ -71,20 +78,20 @@ el.addEventListener('submit', function(){
     }
     event.target.reset();
     var spliced = allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
-
+    // console.log('questions asked: ' + questionsAsked + '\n questions in round: ' + questionsInRound + '\n number of rounds: ' + numberOfRounds);
     //If there are still questions in the round
     if (questionsAsked < questionsInRound){
         newQuestion();
     }
 
-    //If there are no more rounds left
+    //If there are no more rounds left END STATE
     else if (numberOfRounds === 1){
         saveToLocal('allPlayers', allPlayers);
         window.location.href = 'score.html';
     }
 
     //If the active player has completed all questions in the round
-    else if ((questionsAsked === questionsInRound) && (numberOfRounds < 1)){
+    else if ((questionsAsked === questionsInRound) && (activePlayer < 3)) {
         activePlayer++;
         questionsAsked = 0;
         newQuestion();
@@ -94,6 +101,7 @@ el.addEventListener('submit', function(){
     else {
         numberOfRounds--;
         roundsCompleted++;
+        activePlayer = 0;
         questionsAsked = 0;
         newQuestion();
     }
@@ -106,6 +114,3 @@ function newQuestion(){
 }
 
 newQuestion();
-
-
-//sdljkghsdklgsjkld
