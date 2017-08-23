@@ -3,10 +3,12 @@ var numberOfRounds = 3;
 var questionsInRound = 2;
 var questionsAsked = 0;
 var roundsCompleted = 0;
+var activePlayer = 0;
 
-var player = getFromLocal('allPlayers')[0];
 
-// var allPlayers = getFromLocal('allPlayers');
+// var player = getFromLocal('allPlayers')[0];
+
+var allPlayers = getFromLocal('allPlayers');
 // for (var i = 0; i < allPlayers.length; i++){
 
 // }
@@ -59,12 +61,12 @@ el.addEventListener('submit', function(){
     var el = document.getElementsByClassName('questionButton');
     //Run this if player seleced correct answer
     if (el[currentQuestion[2]].checked){
-        player.score++;
+        allPlayers[activePlayer].score++;
         questionsAsked++;
     }
     //Run if player was incorrect
     else {
-        player.score--;
+        allPlayers[activePlayer].score--;
         questionsAsked++;
     }
     event.target.reset();
@@ -75,8 +77,15 @@ el.addEventListener('submit', function(){
         newQuestion();
     }
 
+    //If the active player has completed all questions in the round
+    else if (questionsAsked === questionsInRound){
+        console.log('new player start');
+        activePlayer++;
+    }
+
     //If there are no more rounds left
     else if (numberOfRounds === 1){
+        //TO DO: Change this to push allPlayers to localStorage
         saveToLocal('playerOne', player);
         console.log(localStorage.playerScore);
 
@@ -95,6 +104,7 @@ el.addEventListener('submit', function(){
 
 function newQuestion(){
     document.getElementById('roundNumber').innerText = roundsCompleted + 1;
+    console.log('Player ' + allPlayers[activePlayer].name + '\'s turn' );
     randomQuestionGen();
     askQuestion();
 }
