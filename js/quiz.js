@@ -4,7 +4,12 @@ var questionsInRound = 2;
 var questionsAsked = 0;
 var roundsCompleted = 0;
 
-var player = getFromLocal('playerOne');
+var player = getFromLocal('allPlayers')[0];
+
+// var allPlayers = getFromLocal('allPlayers');
+// for (var i = 0; i < allPlayers.length; i++){
+
+// }
 
 var allQuestions = [
     ['What is the answer to question 1?',['bunny', 'dog','cat','bird'], 0],
@@ -55,13 +60,11 @@ el.addEventListener('submit', function(){
     //Run this if player seleced correct answer
     if (el[currentQuestion[2]].checked){
         player.score++;
-        console.log('player is right');
         questionsAsked++;
     }
     //Run if player was incorrect
     else {
         player.score--;
-        console.log('player is wrong');
         questionsAsked++;
     }
     event.target.reset();
@@ -85,13 +88,12 @@ el.addEventListener('submit', function(){
         numberOfRounds--;
         roundsCompleted++;
         questionsAsked = 0;
-        console.log('number of rounds is now ' + numberOfRounds);
         newQuestion();
     }
+    console.log('Question: ' + (questionsInRound - questionsAsked) + '\n Round: ' + (numberOfRounds));
 });
 
 function newQuestion(){
-    //TO DO: get number of rounds to display correctly as "Round 1, Round 2,..."
     document.getElementById('roundNumber').innerText = roundsCompleted + 1;
     randomQuestionGen();
     askQuestion();
