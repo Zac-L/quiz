@@ -99,7 +99,7 @@ el.addEventListener('submit', function(){
     //If there are still questions in the round
     if (questionsAsked < questionsInRound ){
         setTimeout(function() {
-            quiz.style.opacity = 0;
+            quiz.style.opacity = 1;
             newQuestion();
         }, 2000);
     }
