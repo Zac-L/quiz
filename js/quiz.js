@@ -83,6 +83,9 @@ var el = document.getElementById('question-form');
 el.addEventListener('submit', function(){
     event.preventDefault();
     var el = document.getElementsByClassName('questionButton');
+    
+    var roundT = document.getElementById('trans');
+    
     if (el[currentQuestion[2]].checked){
         player.score++;
         console.log('player is right');
@@ -95,27 +98,36 @@ el.addEventListener('submit', function(){
     }
     event.target.reset();
     var spliced = allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
-
+    
     //If there are still questions in the round
     if (questionsAsked < questionsInRound ){
+        // clearChangeAnimate();
+        roundT.classList.remove('roundT');
+        clearAnimateText();        
         newQuestion();
     }
-
+    
     //If there are no more rounds left
-    else if (numberOfRounds == 0){
+    else if (numberOfRounds === 0){
         saveToLocal('playerOne', player);
         console.log(localStorage.playerScore);
-
+        
         window.location.href = 'score.html';
+        
     }
 
     //If there are no more questions in the round
     else {
         numberOfRounds--;
         questionsAsked = 0;
-        console.log('number of rounds is now ' + numberOfRounds);
+        console.log('number of rounds is now ' + numberOfRounds);      
+        
+        roundT.classList.add('roundT');
         newQuestion();
+        console.log(numberOfRounds);
+        changeAnimateText();    
     }
+    
 });
 
 function newQuestion(){
@@ -123,7 +135,16 @@ function newQuestion(){
     //TO DO: get number of rounds to display correctly as "Round 1, Round 2,..."
     document.getElementById('roundNumber').innerText = numberOfRounds;
     randomQuestionGen();
-    askQuestion();
+    askQuestion();    
 }
 
+function changeAnimateText(){
+    document.getElementById('showRound').innerText = 'Round Number' + numberOfRounds;
+}
+
+function clearAnimateText(){
+    document.getElementById('showRound').innerText = ''; 
+}
+
+changeAnimateText();
 newQuestion();
