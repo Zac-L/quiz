@@ -101,7 +101,7 @@ el.addEventListener('submit', function(){
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-        }, 2000);
+        }, 900);
     }
 
     //If there are no more rounds left
@@ -121,7 +121,7 @@ el.addEventListener('submit', function(){
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-        }, 2000);
+        }, 900);
     }
 });
 
