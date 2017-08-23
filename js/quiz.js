@@ -81,7 +81,13 @@ el.addEventListener('submit', function(){
     event.preventDefault();
     quiz.style.opacity = 0;
     var el = document.getElementsByClassName('questionButton');
+
+    
+    var roundT = document.getElementById('trans');
+    
+
     //Run this if player seleced correct answer
+
     if (el[currentQuestion[2]].checked){
         player.score++;
         console.log('player is right');
@@ -95,21 +101,32 @@ el.addEventListener('submit', function(){
     }
     event.target.reset();
     var spliced = allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
-
+    
     //If there are still questions in the round
     if (questionsAsked < questionsInRound ){
+
+        
+        roundT.classList.remove('roundT');
+        clearAnimateText();        
+        //newQuestion();
+
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
         }, 2000);
-    }
 
+    }
+    
     //If there are no more rounds left
+
+
     else if (numberOfRounds === 1){
+
         saveToLocal('playerOne', player);
         console.log(localStorage.playerScore);
-
+        
         window.location.href = 'score.html';
+        
     }
 
     //If there are no more questions in the round
@@ -117,19 +134,37 @@ el.addEventListener('submit', function(){
         numberOfRounds--;
         roundsCompleted++;
         questionsAsked = 0;
+
+        console.log('number of rounds is now ' + numberOfRounds);      
+        
+        roundT.classList.add('roundT');
+        //newQuestion();
+        changeAnimateText();    
+
         console.log('number of rounds is now ' + numberOfRounds);
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
         }, 2000);
+
     }
+    
 });
 
 function newQuestion(){
     //TO DO: get number of rounds to display correctly as "Round 1, Round 2,..."
     document.getElementById('roundNumber').innerText = roundsCompleted + 1;
     randomQuestionGen();
-    askQuestion();
+    askQuestion();    
 }
 
+function changeAnimateText(){
+    document.getElementById('showRound').innerText = 'Round Number' + numberOfRounds;
+}
+
+function clearAnimateText(){
+    document.getElementById('showRound').innerText = ''; 
+}
+
+changeAnimateText();
 newQuestion();
