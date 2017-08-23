@@ -49,11 +49,14 @@ var addPlayer = document.getElementById( 'add-player' );
 
 addPlayer.addEventListener( 'submit', function(){
     event.preventDefault();
-    console.log('in event listener');
-    var player = new Player (this.playerInput.value);
-    allPlayers.push(player);
-    console.log(this.playerInput.value);
-    saveToLocal( 'allPlayers', allPlayers );
+    if (allPlayers.length < 4){
+        var player = new Player (this.playerInput.value);
+        allPlayers.push(player);
+        saveToLocal( 'allPlayers', allPlayers );
+    }
+    else {
+        alert ('Too many players!');
+    }
     event.target.reset();
 });
 
