@@ -1,12 +1,10 @@
 var currentQuestion = [];
-var questionsAsked = 0;
 var numberOfRounds = 3;
 var questionsInRound = 2;
+var questionsAsked = 0;
+var roundsCompleted = 0;
 
-var player = {
-    name: getFromLocal('playerOne').name,
-    score: 0,
-};
+var player = getFromLocal('playerOne');
 
 var allQuestions = [
     ['What is the answer to question 1?',['bunny', 'dog','cat','bird'], 0],
@@ -75,7 +73,7 @@ el.addEventListener('submit', function(){
     }
 
     //If there are no more rounds left
-    else if (numberOfRounds === 0){
+    else if (numberOfRounds === 1){
         saveToLocal('playerOne', player);
         console.log(localStorage.playerScore);
 
@@ -85,6 +83,7 @@ el.addEventListener('submit', function(){
     //If there are no more questions in the round
     else {
         numberOfRounds--;
+        roundsCompleted++;
         questionsAsked = 0;
         console.log('number of rounds is now ' + numberOfRounds);
         newQuestion();
@@ -93,7 +92,7 @@ el.addEventListener('submit', function(){
 
 function newQuestion(){
     //TO DO: get number of rounds to display correctly as "Round 1, Round 2,..."
-    document.getElementById('roundNumber').innerText = numberOfRounds;
+    document.getElementById('roundNumber').innerText = roundsCompleted + 1;
     randomQuestionGen();
     askQuestion();
 }
