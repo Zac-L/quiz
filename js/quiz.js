@@ -85,18 +85,23 @@ el.addEventListener('submit', function(){
         questionsAsked++;
     }
     event.target.reset();
-    var spliced = allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
+
+    //Remove asked question from allQuestions array
+    allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
+
+    //Run if the player still needs to answer more questions in a round
     if (questionsAsked < questionsInRound){
         newQuestion();
     }
 
+    //Run if player has answered all questions in a round. Also checks number of players
     else if ((questionsAsked === questionsInRound) && (activePlayer < allPlayers.length - 1)) {
         activePlayer++;
         questionsAsked = 0;
         newQuestion();
     }
 
-    //If all players have answered questions in a round
+    //Run if all players have answered all questions in a round
     else {
         numberOfRounds--;
         roundsCompleted++;
@@ -106,14 +111,15 @@ el.addEventListener('submit', function(){
     }
 });
 
+//Main function to run code. Operates recursively. Navigates to score.html when end state is reached
 function newQuestion(){
+    //Check if number of rounds is 0. The game is over when there are no more rounds
     if (numberOfRounds === 0){
         saveToLocal('allPlayers', allPlayers);
-        // window.location.href = 'score.html';
-        console.log('THE END');
+        window.location.href = 'score.html';
     }
+    //If there are still rounds left, continue running game
     else {
-        console.log('Question: ' + (questionsInRound - questionsAsked) + '\n Round: ' + (numberOfRounds) + '\n Player: ' + allPlayers[activePlayer].name);
         randomQuestionGen();
         askQuestion();
     }
