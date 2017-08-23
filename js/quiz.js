@@ -3,11 +3,12 @@ var numberOfRounds = 3;
 var questionsInRound = 2;
 var questionsAsked = 0;
 var roundsCompleted = 0;
+var quiz = document.getElementById('quiz');
 
 var player = getFromLocal('playerOne');
 
 var allQuestions = [
-     ['In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?', [ 'William and Elizabeth', 'Joseph and Catherine', 'John and Mary', 'George and Anne' ], 2 ],
+    ['In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?', [ 'William and Elizabeth', 'Joseph and Catherine', 'John and Mary', 'George and Anne' ], 2 ],
 
     [ 'When did the Liberty Bell get its name?', [ 'when it was made, in 1701', 'when it rang on July 4, 1776', 'in the 19th century, when it became a symbol of the abolition of slavery', 'none of the above' ], 2],
 
@@ -96,7 +97,10 @@ el.addEventListener('submit', function(){
 
     //If there are still questions in the round
     if (questionsAsked < questionsInRound ){
-        newQuestion();
+        setTimeout(function() {
+            quiz.style.opacity = 0;
+            newQuestion();
+        }, 2000);
     }
 
     //If there are no more rounds left
@@ -113,7 +117,10 @@ el.addEventListener('submit', function(){
         roundsCompleted++;
         questionsAsked = 0;
         console.log('number of rounds is now ' + numberOfRounds);
-        newQuestion();
+        setTimeout(function() {
+            quiz.style.opacity = 1;
+            newQuestion();
+        }, 2000);
     }
 });
 
