@@ -5,13 +5,7 @@ var questionsAsked = 0;
 var roundsCompleted = 0;
 var activePlayer = 0;
 
-
-// var player = getFromLocal('allPlayers')[0];
-
 var allPlayers = getFromLocal('allPlayers');
-// for (var i = 0; i < allPlayers.length; i++){
-
-// }
 
 var allQuestions = [
     ['What is the answer to question 1?',['bunny', 'dog','cat','bird'], 0],
@@ -92,20 +86,11 @@ el.addEventListener('submit', function(){
     }
     event.target.reset();
     var spliced = allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
-    // console.log('questions asked: ' + questionsAsked + '\n questions in round: ' + questionsInRound + '\n number of rounds: ' + numberOfRounds);
-    //If there are still questions in the round
     if (questionsAsked < questionsInRound){
         newQuestion();
     }
 
-    // //If there are no more rounds left END STATE
-    // else if (numberOfRounds === 1){
-    //     saveToLocal('allPlayers', allPlayers);
-    //     window.location.href = 'score.html';
-    // }
-
-    //If the active player has completed all questions in the round
-    else if ((questionsAsked === questionsInRound) && (activePlayer < 3)) {
+    else if ((questionsAsked === questionsInRound) && (activePlayer < allPlayers.length - 1)) {
         activePlayer++;
         questionsAsked = 0;
         newQuestion();
