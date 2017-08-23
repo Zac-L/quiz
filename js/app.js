@@ -49,7 +49,10 @@ var addPlayer = document.getElementById( 'add-player' );
 
 addPlayer.addEventListener( 'submit', function(){
     event.preventDefault();
-    if (allPlayers.length < 4){
+    if (this.playerInput.value === ''){
+        alert ('Please enter a name');
+    }
+    else if (allPlayers.length < 4){
         var player = new Player (this.playerInput.value);
         allPlayers.push(player);
         saveToLocal( 'allPlayers', allPlayers );

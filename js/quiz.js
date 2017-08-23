@@ -21,6 +21,20 @@ var allQuestions = [
     ['What is the answer to question 5?',['bunny', 'dog','cat','bird'], 0],
     ['What is the answer to question 6?',['billy', 'dog','cat','bird'], 2],
     ['What is the answer to question 7?',['bob', 'dog','cat','bird'], 3],
+    ['What is the answer to question 2?',['billy', 'dog','cat','bird'], 2],
+    ['What is the answer to question 3?',['bob', 'dog','cat','bird'], 3],
+    ['What is the answer to question 4?',['joe', 'dog','cat','bird'], 1],
+    ['What is the answer to question 5?',['bunny', 'dog','cat','bird'], 0],
+    ['What is the answer to question 6?',['billy', 'dog','cat','bird'], 2],
+    ['What is the answer to question 7?',['bob', 'dog','cat','bird'], 3],
+    ['What is the answer to question 8?',['bob', 'dog','cat','bird'], 3],
+    ['What is the answer to question 9?',['joe', 'dog','cat','bird'], 1],
+    ['What is the answer to question 10?',['bunny', 'dog','cat','bird'], 0],
+    ['What is the answer to question 4?',['joe', 'dog','cat','bird'], 1],
+    ['What is the answer to question 5?',['bunny', 'dog','cat','bird'], 0],
+    ['What is the answer to question 6?',['billy', 'dog','cat','bird'], 2],
+    ['What is the answer to question 7?',['bob', 'dog','cat','bird'], 3],
+    ['What is the answer to question 8?',['bob', 'dog','cat','bird'], 3],
     ['What is the answer to question 8?',['bob', 'dog','cat','bird'], 3],
     ['What is the answer to question 9?',['joe', 'dog','cat','bird'], 1],
     ['What is the answer to question 10?',['bunny', 'dog','cat','bird'], 0],
@@ -84,11 +98,11 @@ el.addEventListener('submit', function(){
         newQuestion();
     }
 
-    //If there are no more rounds left END STATE
-    else if (numberOfRounds === 1){
-        saveToLocal('allPlayers', allPlayers);
-        window.location.href = 'score.html';
-    }
+    // //If there are no more rounds left END STATE
+    // else if (numberOfRounds === 1){
+    //     saveToLocal('allPlayers', allPlayers);
+    //     window.location.href = 'score.html';
+    // }
 
     //If the active player has completed all questions in the round
     else if ((questionsAsked === questionsInRound) && (activePlayer < 3)) {
@@ -108,9 +122,16 @@ el.addEventListener('submit', function(){
 });
 
 function newQuestion(){
-    console.log('Question: ' + (questionsInRound - questionsAsked) + '\n Round: ' + (numberOfRounds) + '\n Player: ' + allPlayers[activePlayer].name);
-    randomQuestionGen();
-    askQuestion();
+    if (numberOfRounds === 0){
+        saveToLocal('allPlayers', allPlayers);
+        // window.location.href = 'score.html';
+        console.log('THE END');
+    }
+    else {
+        console.log('Question: ' + (questionsInRound - questionsAsked) + '\n Round: ' + (numberOfRounds) + '\n Player: ' + allPlayers[activePlayer].name);
+        randomQuestionGen();
+        askQuestion();
+    }
 }
 
 newQuestion();
