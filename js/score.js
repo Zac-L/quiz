@@ -1,7 +1,6 @@
 'use strict';
 
-//TO DO: Retrofit this to accomodate multiple players
-var getPlayer = getFromLocal('playerOne');
+var allPlayers = getFromLocal('allPlayers');
 
 function saveToLocal( key, value ) {
     var localSavedData = JSON.stringify( value );
@@ -20,12 +19,13 @@ else{
     var allScores = getFromLocal('allScores');
 }
 
-//Add current player to allScores object array
-//TO DO: Retrofit this to accomodate multiple players
-allScores.push(getPlayer);
+//Add all player scores to allScores object array
+for (var i = 0; i < allPlayers.length; i++){
+    allScores.push(allPlayers[i]);
+}
 //Display Player and score information on DOM
-document.getElementById('player-name').innerText = getPlayer.name;
-document.getElementById('player-score').innerText = getPlayer.score;
+// document.getElementById('player-name').innerText = getPlayer.name;
+// document.getElementById('player-score').innerText = getPlayer.score;
 
 //Add current player scores to allScores localStorage key
 saveToLocal('allScores', allScores);
