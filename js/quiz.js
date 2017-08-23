@@ -1,15 +1,14 @@
 var currentQuestion = [];
-var questionsAsked = 0;
 var numberOfRounds = 3;
 var questionsInRound = 2;
+var questionsAsked = 0;
+var roundsCompleted = 0;
+var quiz = document.getElementById('quiz');
 
-var player = {
-    name: getFromLocal('playerNames'),
-    score: 0,
-};
+var player = getFromLocal('playerOne');
 
 var allQuestions = [
-     ['In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?', [ 'William and Elizabeth', 'Joseph and Catherine', 'John and Mary', 'George and Anne' ], 2 ],
+    ['In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?', [ 'William and Elizabeth', 'Joseph and Catherine', 'John and Mary', 'George and Anne' ], 2 ],
 
     [ 'When did the Liberty Bell get its name?', [ 'when it was made, in 1701', 'when it rang on July 4, 1776', 'in the 19th century, when it became a symbol of the abolition of slavery', 'none of the above' ], 2],
 
@@ -59,14 +58,12 @@ function getFromLocal( key ) {
     return JSON.parse( localStorage.getItem( key ) );
 }
 
+//Generates random question from allQuestions array, assigns is to currentQuestion variable
 function randomQuestionGen() {
     currentQuestion = allQuestions [Math.floor(Math.random() * (allQuestions.length))];
-    console.log(currentQuestion);
 };
 
 function askQuestion() {
-
-    console.log('round: ' + numberOfRounds + ' question: ' + ( questionsInRound - questionsAsked ));
     //Populate Label elements with four possible answers to a question
     for (var i = 0; i < 4; i++){
         var answerElement = document.getElementById('answer' + ( i + 1 ));
@@ -75,22 +72,28 @@ function askQuestion() {
 
     //Add question string to DOM
     var questionElement = document.getElementById('questions');
-    questionElement.innerText = currentQuestion [0];
-
+    questionElement.innerText = currentQuestion[0];
 }
+
 //Event listener to check status of correct radio button, return score depending on user input
 var el = document.getElementById('question-form');
 el.addEventListener('submit', function(){
     event.preventDefault();
+    quiz.style.opacity = 0;
     var el = document.getElementsByClassName('questionButton');
+
     
     var roundT = document.getElementById('trans');
     
+
+    //Run this if player seleced correct answer
+
     if (el[currentQuestion[2]].checked){
         player.score++;
         console.log('player is right');
         questionsAsked++;
     }
+    //Run if player was incorrect
     else {
         player.score--;
         console.log('player is wrong');
@@ -101,14 +104,24 @@ el.addEventListener('submit', function(){
     
     //If there are still questions in the round
     if (questionsAsked < questionsInRound ){
-        // clearChangeAnimate();
+
+        
         roundT.classList.remove('roundT');
         clearAnimateText();        
-        newQuestion();
+        //newQuestion();
+
+        setTimeout(function() {
+            quiz.style.opacity = 1;
+            newQuestion();
+        }, 2000);
+
     }
     
     //If there are no more rounds left
-    else if (numberOfRounds === 0){
+
+
+    else if (numberOfRounds === 1){
+
         saveToLocal('playerOne', player);
         console.log(localStorage.playerScore);
         
@@ -119,21 +132,28 @@ el.addEventListener('submit', function(){
     //If there are no more questions in the round
     else {
         numberOfRounds--;
+        roundsCompleted++;
         questionsAsked = 0;
+
         console.log('number of rounds is now ' + numberOfRounds);      
         
         roundT.classList.add('roundT');
-        newQuestion();
-        console.log(numberOfRounds);
+        //newQuestion();
         changeAnimateText();    
+
+        console.log('number of rounds is now ' + numberOfRounds);
+        setTimeout(function() {
+            quiz.style.opacity = 1;
+            newQuestion();
+        }, 2000);
+
     }
     
 });
 
 function newQuestion(){
-    //Set html element's inner text to number of rounds in game
     //TO DO: get number of rounds to display correctly as "Round 1, Round 2,..."
-    document.getElementById('roundNumber').innerText = numberOfRounds;
+    document.getElementById('roundNumber').innerText = roundsCompleted + 1;
     randomQuestionGen();
     askQuestion();    
 }

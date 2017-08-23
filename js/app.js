@@ -13,22 +13,19 @@ function Game (difficulty, numberOfRounds, roundsPlayed, askedQuestions) {
     newRound();
     getResults();
     displayScore();
-
 }
 
-// function Player (name, score, consecutiveAnswers) {
-//     this.name = name;
-//     this.score = score;
-//     this.consecutiveAnswers = consecutiveAnswers;
-//     getUserName();
-
-// }
+function Player (name) {
+    this.name = name;
+    this.score = 0;
+    // this.consecutiveAnswers = consecutiveAnswers;
+    // getUserName();
+}
 
 function Question (question, answer, subject) {
     this.question = question;
     this.answer = answer;
     this.subject = subject;
-
 }
 
 function Round (activePlayer, numberOfQuestions, numberOfQuestionsAsked) {
@@ -36,9 +33,7 @@ function Round (activePlayer, numberOfQuestions, numberOfQuestionsAsked) {
     this.numberOfQuestions = numberOfQuestions;
     this.numberOfQuestionsAsked = numberOfQuestionsAsked;
     updateScore();
-    // askQuestion();
     checkAnswer();
-
 }
 
 function saveToLocal(key, value ) {
@@ -49,14 +44,25 @@ function saveToLocal(key, value ) {
 function getFromLocal( key ) {
     return JSON.parse( localStorage.getItem( key ) );
 }
+
 var form = document.getElementById( 'new-player' );
+
 form.addEventListener( 'submit', function(){
     event.preventDefault();
-    playerNames.push(this.name.value);
+    var playerOne = new Player (this.name.value);
     console.log(this.name.value);
     event.target.reset();
-
-    saveToLocal( 'playerNames', playerNames );
-
+    saveToLocal( 'playerOne', playerOne );
+    location.href = 'quiz.html';
 });
 
+form.addEventListener( '', function(){
+    event.preventDefault();
+    var playerOne = new Player (this.name.value);
+    console.log(this.name.value);
+    event.target.reset();
+    saveToLocal( 'playerOne', playerOne );
+});
+
+//TODO: Add a "add player" button in addition to submit button. Return alert "at least one player required" if user hit submit without adding players
+//TODO: Display list of added players to index.html DOM
