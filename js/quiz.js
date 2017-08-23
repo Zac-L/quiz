@@ -79,6 +79,7 @@ function askQuestion() {
 var el = document.getElementById('question-form');
 el.addEventListener('submit', function(){
     event.preventDefault();
+    quiz.style.opacity = 0;
     var el = document.getElementsByClassName('questionButton');
     //Run this if player seleced correct answer
     if (el[currentQuestion[2]].checked){
