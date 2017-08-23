@@ -4,7 +4,7 @@ var numberOfRounds = 3;
 var questionsInRound = 2;
 
 var player = {
-    name: getFromLocal('playerNames'),
+    name: getFromLocal('playerOne').name,
     score: 0,
 };
 
@@ -32,14 +32,12 @@ function getFromLocal( key ) {
     return JSON.parse( localStorage.getItem( key ) );
 }
 
+//Generates random question from allQuestions array, assigns is to currentQuestion variable
 function randomQuestionGen() {
     currentQuestion = allQuestions [Math.floor(Math.random() * (allQuestions.length))];
-    console.log(currentQuestion);
 };
 
 function askQuestion() {
-
-    console.log('round: ' + numberOfRounds + ' question: ' + ( questionsInRound - questionsAsked ));
     //Populate Label elements with four possible answers to a question
     for (var i = 0; i < 4; i++){
         var answerElement = document.getElementById('answer' + ( i + 1 ));
@@ -48,19 +46,21 @@ function askQuestion() {
 
     //Add question string to DOM
     var questionElement = document.getElementById('questions');
-    questionElement.innerText = currentQuestion [0];
-
+    questionElement.innerText = currentQuestion[0];
 }
+
 //Event listener to check status of correct radio button, return score depending on user input
 var el = document.getElementById('question-form');
 el.addEventListener('submit', function(){
     event.preventDefault();
     var el = document.getElementsByClassName('questionButton');
+    //Run this if player seleced correct answer
     if (el[currentQuestion[2]].checked){
         player.score++;
         console.log('player is right');
         questionsAsked++;
     }
+    //Run if player was incorrect
     else {
         player.score--;
         console.log('player is wrong');
