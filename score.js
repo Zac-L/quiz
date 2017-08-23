@@ -2,8 +2,6 @@
 
 var getPlayer = getFromLocal('playerOne');
 
-document.getElementById('player-name').innerText = getPlayer.name;
-document.getElementById('player-score').innerText = getPlayer.score;
 
 function saveToLocal(key, value ) {
     var localSavedData = JSON.stringify( value );
@@ -13,3 +11,22 @@ function saveToLocal(key, value ) {
 function getFromLocal( key ) {
     return JSON.parse( localStorage.getItem( key ) );
 }
+
+if (!localStorage.allScores)
+{
+    var allScores = [];
+}
+
+else{
+    var allScores = getFromLocal('allScores');
+}
+
+allScores.push(getPlayer);
+saveToLocal('allScores', allScores);
+
+
+
+// document.getElementById('player-name').innerText = getPlayer.name;
+    // document.getElementById('player-score').innerText = getPlayer.score;
+
+
