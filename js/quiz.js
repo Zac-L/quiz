@@ -75,7 +75,7 @@ el.addEventListener('submit', function(){
     }
 
     //If there are no more rounds left
-    else if (numberOfRounds == 0){
+    else if (numberOfRounds === 0){
         saveToLocal('playerOne', player);
         console.log(localStorage.playerScore);
 
@@ -92,7 +92,6 @@ el.addEventListener('submit', function(){
 });
 
 function newQuestion(){
-    //Set html element's inner text to number of rounds in game
     //TO DO: get number of rounds to display correctly as "Round 1, Round 2,..."
     document.getElementById('roundNumber').innerText = numberOfRounds;
     randomQuestionGen();
