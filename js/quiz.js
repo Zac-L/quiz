@@ -207,9 +207,9 @@ function newQuestion(){
 }
 
 function changeAnimateText(){
-    document.getElementById('showRound').innerText = 'Round Number' + numberOfRounds;
+    document.getElementById('showRound').innerText = 'Round Number ' + (roundsCompleted + 1);
     setTimeout(function(){
-        var roundT = document.getElementById('trans');    
+        var roundT = document.getElementById('trans'); 
         roundT.style.display = 'none';
 
         console.log('remove');
