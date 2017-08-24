@@ -7,24 +7,27 @@
         <link rel="stylesheet" href="../sam-skeleton/css/normalize.css"> -->
     </head>
     <body>
-         <header>
-            <h1>About us</h1>
-            <nav>
-                <ul>
-                    <li class="nav-item"><a href="index.html">Home</a></li>
-                    <li class="nav-item"><a href="quiz.html">Quiz</a></li>
-                </ul>
-                <ul>
-                    <li class="nav-item"><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+        <header>
+                <h1>About us</h1>
+                <nav>
+                    <ul>
+                        <li class="nav-item"><a href="index.html">Home</a></li>
+                        <li class="nav-item"><a href="quiz.html">Quiz</a></li>
+                        <li class="nav-item"><a href="about.html">About Us</a></li>
+                    </ul>
+                </nav>
         </header>
 
-        <script>
-            var getPlayer = getFromLocal('playerOne');
-            function getFromLocal( key ) {
-    return JSON.parse( localStorage.getItem( key ) );
-}
-        </script>
+
+        <div>
+            <ul id = "high-score"></ul>
+        </div>
+
+        <!-- <div>
+            <h2>Congrats, <span id="player-name"></span></h2>
+            <h3>Your score: <span id="player-score"></span></h3>
+        </div> -->
+        
+        <script src="js/score.js"></script>
     </body>
 </html>

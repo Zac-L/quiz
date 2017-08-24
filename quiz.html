@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>Adventure Quiz!</title>
-        <!-- <link href="style.css" type="text/css" rel="stylesheet">
-        <link rel="stylesheet" href="../sam-skeleton/css/normalize.css"> -->
+
+        <link href= "quiz.css" type="text/css" rel="stylesheet">
+
     </head>
     <body>
          <header>
@@ -13,12 +14,21 @@
                 <ul>
                     <li class="nav-item"><a href="index.html">Home</a></li>
                     <li class="nav-item"><a href="quiz.html">Quiz</a></li>
-                </ul>
-                <ul>
-                    <li class="nav-item"><a href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a href="about.html">About Us</a></li>
                 </ul>
             </nav>
         </header>
+        
+        <div id = 'trans' class = "roundT">
+            <h2><span id ="showRound"></span></h2>
+        </div>
+
+
+        <div id>
+            <h2>Round: <span class ="displayRound" id="roundNumber"></span></h2>
+        </div>
+
+        <div id="quiz">
         <form id="question-form" action="">
             <fieldset>
                 <legend>Quiz</legend>
@@ -41,6 +51,7 @@
 
             </fieldset>
         </form>
-        <script src="quiz.js"></script>
+    </div>
+        <script src="js/quiz.js"></script>
     </body>
 </html>
