@@ -85,3 +85,9 @@ resetButton.addEventListener('click',function(){
     saveToLocal('allScores', allScores);
     populateHiScore();
 });
+
+//New game button event listener
+var newGameButton = document.getElementById('new-game');
+newGameButton.addEventListener('click', function(){
+    window.location.href = 'index.html';
+});
