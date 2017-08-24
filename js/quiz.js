@@ -45,6 +45,18 @@ var allQuestions = [
 
     [ 'The first black American pictured on a U.S. postage stamp was who?', [ 'Frederick Douglass', 'Booker T. Washington', 'Louis Armstrong', 'Joe Louis' ], 3 ],
 
+    ['What creature\'s bite can lead to Lyme disease?' , ['Human' , 'Flea' , 'Tick' , 'No such creature exists'], 3],
+
+    ['What is the largest species of terrestrial crab in the world?' , ['Crab' , 'Had no idea there were more than one species of crab' , 'Large Crab' , 'The Coconut Crab'] , 4],
+
+    ['Cynophobia is the fear of what kind of animal?' , ['Rats' , 'Tigers' , 'Lions' , 'Dogs'] , 4],
+
+    ['A flamboyance is a group of what animal?' , ['Dog' , 'Mouse' , 'The word means elegant' , 'Flamingos'] , 4],
+
+    ['What is a group of whales called?' , ['No such thing' , 'A pod' , 'A group of whales' , 'Whales'] , 2],
+
+    ['What is the capital of Oregon?' , ['Salem' , 'Washington DC' , 'Mexico City' , 'Georgia'] , 1],
+
     ['What did the “D” in “D-Day” stand for?', [ 'doom', 'day', 'Dwight (Eisenhower)', 'Dunkirk' ], 1 ],
 
     ['A group of pugs is called a...', ['pack', 'scourge', 'grumble', 'nuisance'], 2],
@@ -56,7 +68,7 @@ var allQuestions = [
     ['Can you drink all of the water in the world without getting sick?', ['no', 'it\'s a secret', 'water\s gross', 'yes'], 0],
 
     [ 'The Brownie Box Camera introduced by Eastman Kodak in 1900 had a retail price of what?', [ '$1', '$5', '$10', '$20' ], 0 ],
-    
+
     [ 'Which of these characters turned 40 years old in 1990?', [ 'Charlie Brown', 'Bugs Bunny', 'Mickey Mouse', 'Fred Flintstone' ], 0 ],
 
     [ 'The Philadelphia mint started putting a “P” mint mark on quarters when?', [ '1960', '1980', '1970', 'never' ], 1 ],
@@ -66,12 +78,22 @@ var allQuestions = [
     ['Before becoming George Bush’s Secretary of Defense, what was Dick Cheney’s position?', [ 'congressman from Wyoming', 'Army general', 'governor of New Hampshire', 'secretary of defense under Ronald Reagan' ], 0 ],
 
     [ 'When Mt. St. Helens erupted on May 18, 1980, how many people were killed?', [ '1', '57', '123', '571' ], 1 ],
-    
+
     ['In J. Edgar Hoover, what did the J stand for?', [ 'James', 'John', 'Joseph', 'Jack' ], 1 ],
 
     [ 'Florence Nightingale became known as “the Lady With the Lamp” during which war?', [ 'American Civil War' , 'Crimean War', 'World War I', 'Korean War' ], 1 ],
+
+    [ 'What year was it that the Census Bureau first reported that a majority of new mothers were remaining in the new job market?', [ '1968', '1978', '1988', '2003' ], 2 ],
+
+    ['What is the name of the popular Australian food spread used on sandwiches, toast and pastries?' , ['Vegemite' , 'Jelly' , 'Jam' , 'Peanut Butter'] , 1],
     
-    [ 'What year was it that the Census Bureau first reported that a majority of new mothers were remaining in the new job market?', [ '1968', '1978', '1988', '2003' ], 2 ]
+    ['What is professional wrestler John Cena\'s famous catchphrase?' , ['I am John Cena!' , 'You can\'t see me!' , 'See ya later!' , 'Bye!'] , 2],
+    
+    ['Who wrote the 1936 novel "Gone with the Wind"?' , ['That is a movie' , 'Margaret Mitchell' , 'Jon Snow' , 'Khaleesi'] , 2] ,
+    
+    ['Who painted a late 15th-century mural known as the Last Supper?' , ['Pablo Picasso' , 'Michaelangelo' , 'Vincent Van Gogh' , 'Leonardo Da Vinci'] , 4],
+    
+    ['What is a baby turkey called?' , ['Poult/Chick' , 'Turkey' , 'Baby' , 'Baby Turkey'] , 1]
 ];
 
 function saveToLocal(key, value ) {
@@ -179,7 +201,7 @@ el.addEventListener('submit', function(){
             newQuestion();
         }, 2000);
     }
-    
+
 });
 
 //Main function to run code. Operates recursively. Navigates to score.html when end state is reached
@@ -209,7 +231,7 @@ function newQuestion(){
 function changeAnimateText(){
     document.getElementById('showRound').innerText = 'Round Number ' + (roundsCompleted + 1);
     setTimeout(function(){
-        var roundT = document.getElementById('trans'); 
+        var roundT = document.getElementById('trans');
         roundT.style.display = 'none';
 
         console.log('remove');
