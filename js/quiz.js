@@ -60,6 +60,12 @@ function getFromLocal( key ) {
     return JSON.parse( localStorage.getItem( key ) );
 }
 
+//Switch active player displayed to DOM
+function changePlayerDisplay() {
+    var el = document.getElementById('currentPlayer');
+    el.innerText = allPlayers[activePlayer].name;
+}
+
 //Generates random question from allQuestions array, assigns is to currentQuestion variable
 function randomQuestionGen() {
     currentQuestion = allQuestions [Math.floor(Math.random() * (allQuestions.length))];
@@ -116,6 +122,7 @@ el.addEventListener('submit', function(){
     else if ((questionsAsked === questionsInRound) && (activePlayer < allPlayers.length - 1)) {
         console.log('switching to next player');
         activePlayer++;
+        changePlayerDisplay();
         questionsAsked = 0;
 
         setTimeout(function() {
@@ -131,6 +138,7 @@ el.addEventListener('submit', function(){
         numberOfRounds--;
         roundsCompleted++;
         activePlayer = 0;
+        changePlayerDisplay();
         questionsAsked = 0;
         roundT.classList.add('roundT');
         changeAnimateText();
@@ -145,12 +153,12 @@ el.addEventListener('submit', function(){
 
 //Main function to run code. Operates recursively. Navigates to score.html when end state is reached
 function newQuestion(){
-
+    changePlayerDisplay();
     //Check if number of rounds is 0. The game is over when there are no more rounds
     if (numberOfRounds === 0){
         saveToLocal('allPlayers', allPlayers);
-        // window.location.href = 'score.html';
-        console.log('THE ENF');
+        window.location.href = 'score.html';
+        // console.log('THE END');
     }
     //If there are still rounds left, continue running game
     else {
@@ -171,5 +179,3 @@ function clearAnimateText(){
 
 changeAnimateText();
 newQuestion();
-
-//aaaa
