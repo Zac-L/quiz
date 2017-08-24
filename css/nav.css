@@ -45,7 +45,7 @@
 	position: absolute;
 	top: 35px;
 	visibility: hidden;
-	z-index: 1;
+	z-index: -2;
 }
 li:hover ul#submenu {
 	opacity: 1;
