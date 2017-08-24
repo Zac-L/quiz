@@ -4,8 +4,8 @@ var questionsInRound = 2;
 var questionsAsked = 0;
 var roundsCompleted = 0;
 var activePlayer = 0;
+var points = 100;
 var quiz = document.getElementById('quiz');
-
 
 var allPlayers = getFromLocal('allPlayers');
 
@@ -60,6 +60,12 @@ function getFromLocal( key ) {
     return JSON.parse( localStorage.getItem( key ) );
 }
 
+//Switch active player displayed to DOM
+function changePlayerDisplay() {
+    var el = document.getElementById('currentPlayer');
+    el.innerText = allPlayers[activePlayer].name;
+}
+
 //Generates random question from allQuestions array, assigns is to currentQuestion variable
 function randomQuestionGen() {
     currentQuestion = allQuestions [Math.floor(Math.random() * (allQuestions.length))];
@@ -88,12 +94,14 @@ el.addEventListener('submit', function(){
 
     //Run this if player seleced correct answer
     if (el[currentQuestion[2]].checked){
-        allPlayers[activePlayer].score++;
+        allPlayers[activePlayer].score += points;
+        // console.log(allPlayers[activePlayer].name + ' has ' + allPlayers[activePlayer].score + ' points');
         questionsAsked++;
     }
     //Run if player was incorrect
     else {
-        allPlayers[activePlayer].score--;
+        allPlayers[activePlayer].score -= points;
+        // console.log(allPlayers[activePlayer].name + ' has ' + allPlayers[activePlayer].score + ' points');
         questionsAsked++;
     }
     event.target.reset();
@@ -107,6 +115,7 @@ el.addEventListener('submit', function(){
         roundT.classList.remove('roundT');
         clearAnimateText();
 
+        //Animation code
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
@@ -116,8 +125,10 @@ el.addEventListener('submit', function(){
     else if ((questionsAsked === questionsInRound) && (activePlayer < allPlayers.length - 1)) {
         console.log('switching to next player');
         activePlayer++;
+        changePlayerDisplay();
         questionsAsked = 0;
 
+        //Animation code
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
@@ -130,8 +141,12 @@ el.addEventListener('submit', function(){
         console.log('all players have answered all question in the round');
         numberOfRounds--;
         roundsCompleted++;
+        points += 100;
         activePlayer = 0;
+        changePlayerDisplay();
         questionsAsked = 0;
+
+        //Animation code
         roundT.classList.add('roundT');
         changeAnimateText();
 
@@ -145,12 +160,13 @@ el.addEventListener('submit', function(){
 
 //Main function to run code. Operates recursively. Navigates to score.html when end state is reached
 function newQuestion(){
-
+    changePlayerDisplay();
     //Check if number of rounds is 0. The game is over when there are no more rounds
     if (numberOfRounds === 0){
         saveToLocal('allPlayers', allPlayers);
         window.location.href = 'score.html';
-        console.log('THE ENF');
+        // console.log('THE END');
+
     }
     //If there are still rounds left, continue running game
     else {
@@ -171,5 +187,3 @@ function clearAnimateText(){
 
 changeAnimateText();
 newQuestion();
-
-//aaaa
