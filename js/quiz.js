@@ -9,21 +9,29 @@ var quiz = document.getElementById('quiz');
 
 var allPlayers = getFromLocal('allPlayers');
 
-//Generate date for one of the questions
+//Generate date object for one of the questions
 var todaysDate = new Date ();
 
 var allQuestions = [
-    ['What day is it?', [(Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) - 1), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) + 1), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) - 2), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate())) ], 4],
+    ['What\s today\s date?', [(Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) - 1), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) + 1), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) - 2), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate())) ], 4],
 
     ['In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?', [ 'William and Elizabeth', 'Joseph and Catherine', 'John and Mary', 'George and Anne' ], 2 ],
 
     [ 'When did the Liberty Bell get its name?', [ 'when it was made, in 1701', 'when it rang on July 4, 1776', 'in the 19th century, when it became a symbol of the abolition of slavery', 'none of the above' ], 2],
+
+    [ 'How many known species of weasels exist today?', ['13', '19', '17', '14'], 2],
+
+    [ 'Which is NOT an alias for the famous pro wrestler Randy Poffo?', ['Macho Man Randy Savage', 'The Big Geno', 'Spider Friend', 'Parking Ticket'], 3],
+
+    [ 'What was bitcoin\'s USD value on July 8th 2011?', ['$11.50', '$2,9218.41', '$31.00', 'cryptocurrencies are illegal'], 2],
 
     [ 'In the Roy Rogers-Dale Evans Museum, you will find Roy and Dales stuffed horses. Roy\’s horse was named Trigger, which was Dales horse?', [ 'Buttermilk', 'Daisy', 'Scout', 'Tulip' ], 0 ],
 
     [ 'The Daniel Boon museum at the home where he died can best be described how?', [ 'a log cabin in Kentucky', 'a two-story clapboard house in Tennessee', 'a four-story Georgian-style home in Missouri', 'a three story brick house in Arkansas' ], 2 ],
 
     [ 'Which of the following items was owned by the fewest U.S. homes in 1990?', [ 'home computer', 'compact disk player', 'cordless phone', 'dishwasher' ], 1 ],
+
+    ['What organism did environmental scientist, J.R. McNeill opine to have \"had more impact on the atmosphere than any other single organism in Earth\'s history.\"?',['The Cow', 'Thomas Midgley Jr.', 'Humanity', 'Me'], 1],
 
     [ 'Who holds the record for the most victories in a row on the professional golf tour?', [ 'Jack Nicklaus', 'Arnold Palmer', 'Byron Nelson', 'Ben Hogan' ], 2 ],
 
@@ -134,7 +142,7 @@ el.addEventListener('submit', function(){
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-        }, 500);
+        }, 3000);
     }
     //Run if player has answered all questions in a round, then switches to next player. Also checks number of players
     else if ((questionsAsked === questionsInRound) && (activePlayer < allPlayers.length - 1)) {
@@ -147,7 +155,7 @@ el.addEventListener('submit', function(){
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-        }, 500);
+        }, 3000);
 
     }
 
@@ -162,13 +170,14 @@ el.addEventListener('submit', function(){
         questionsAsked = 0;
 
         //Animation code
+        roundT.style.display = 'block';
         roundT.classList.add('roundT');
         changeAnimateText();
 
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-        }, 500);
+        }, 2000);
     }
     
 });
@@ -199,6 +208,13 @@ function newQuestion(){
 
 function changeAnimateText(){
     document.getElementById('showRound').innerText = 'Round Number' + numberOfRounds;
+    setTimeout(function(){
+        var roundT = document.getElementById('trans');    
+        roundT.style.display = 'none';
+
+        console.log('remove');
+    }, 2000);
+
 }
 
 function clearAnimateText(){
