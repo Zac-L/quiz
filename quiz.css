@@ -14,7 +14,7 @@ body, html{
     text-align: center;
 
     animation-name: fade; 
-    animation-duration: 5s; 
+    animation-duration: .5s; 
     animation-iteration-count: 1;
     animation-timing-function: linear; 
     opacity: 0;

@@ -1,6 +1,6 @@
 var currentQuestion = [];
 var numberOfRounds = 2;
-var questionsInRound = 1;
+var questionsInRound = 2;
 var questionsAsked = 0;
 var roundsCompleted = 0;
 var activePlayer = 0;
@@ -84,12 +84,9 @@ el.addEventListener('submit', function(){
     quiz.style.opacity = 0;
     var el = document.getElementsByClassName('questionButton');
 
-    
     var roundT = document.getElementById('trans');
-    
 
     //Run this if player seleced correct answer
-
     if (el[currentQuestion[2]].checked){
         allPlayers[activePlayer].score++;
         questionsAsked++;
@@ -101,52 +98,47 @@ el.addEventListener('submit', function(){
     }
     event.target.reset();
 
-
     //Remove asked question from allQuestions array
     allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
 
     //Run if the player still needs to answer more questions in a round
     if (questionsAsked < questionsInRound){
+        console.log('player still has more questions in round');
         roundT.classList.remove('roundT');
         clearAnimateText();
-        //newQuestion();
 
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-        }, 2000);
-   
+        }, 500);
     }
-
     //Run if player has answered all questions in a round, then switches to next player. Also checks number of players
     else if ((questionsAsked === questionsInRound) && (activePlayer < allPlayers.length - 1)) {
+        console.log('switching to next player');
         activePlayer++;
         questionsAsked = 0;
-        // newQuestion();
 
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-        }, 2000);
+        }, 500);
 
     }
 
     //Run if all players have answered all questions in a round
     else {
+        console.log('all players have answered all question in the round');
         numberOfRounds--;
         roundsCompleted++;
         activePlayer = 0;
         questionsAsked = 0;
-        console.log('number of rounds is now ' + numberOfRounds);      
-        
-        // roundT.classList.add('roundT');
+        roundT.classList.add('roundT');
         changeAnimateText();
 
-        console.log('number of rounds is now ' + numberOfRounds);
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-        }, 2000);
+        }, 500);
     }
     
 });
@@ -165,7 +157,6 @@ function newQuestion(){
         randomQuestionGen();
         askQuestion();
     }
-  
 }
 
 function changeAnimateText(){
@@ -173,7 +164,7 @@ function changeAnimateText(){
 }
 
 function clearAnimateText(){
-    document.getElementById('showRound').innerText = ''; 
+    document.getElementById('showRound').innerText = '';
 
 }
 
