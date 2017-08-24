@@ -1,6 +1,6 @@
 var currentQuestion = [];
-var numberOfRounds = 3;
-var questionsInRound = 2;
+var numberOfRounds = 2;
+var questionsInRound = 1;
 var questionsAsked = 0;
 var roundsCompleted = 0;
 var activePlayer = 0;
@@ -108,7 +108,7 @@ el.addEventListener('submit', function(){
     //Run if the player still needs to answer more questions in a round
     if (questionsAsked < questionsInRound){
         roundT.classList.remove('roundT');
-        clearAnimateText();        
+        clearAnimateText();
         //newQuestion();
 
         setTimeout(function() {
@@ -118,11 +118,16 @@ el.addEventListener('submit', function(){
    
     }
 
-    //Run if player has answered all questions in a round. Also checks number of players
+    //Run if player has answered all questions in a round, then switches to next player. Also checks number of players
     else if ((questionsAsked === questionsInRound) && (activePlayer < allPlayers.length - 1)) {
         activePlayer++;
         questionsAsked = 0;
-        newQuestion();
+        // newQuestion();
+
+        setTimeout(function() {
+            quiz.style.opacity = 1;
+            newQuestion();
+        }, 2000);
 
     }
 
@@ -134,8 +139,8 @@ el.addEventListener('submit', function(){
         questionsAsked = 0;
         console.log('number of rounds is now ' + numberOfRounds);      
         
-        roundT.classList.add('roundT');
-        changeAnimateText();    
+        // roundT.classList.add('roundT');
+        changeAnimateText();
 
         console.log('number of rounds is now ' + numberOfRounds);
         setTimeout(function() {
