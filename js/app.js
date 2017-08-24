@@ -54,6 +54,10 @@ addPlayer.addEventListener( 'submit', function(){
     }
     else if (allPlayers.length < 4){
         var player = new Player (this.playerInput.value);
+        var el = document.getElementById('players');
+        var playerli = document.createElement('li');
+        playerli.innerText = player.name;
+        el.appendChild(playerli);
         allPlayers.push(player);
         saveToLocal( 'allPlayers', allPlayers );
     }
