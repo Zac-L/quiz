@@ -9,7 +9,7 @@ var quiz = document.getElementById('quiz');
 
 var allPlayers = getFromLocal('allPlayers');
 
-//Generate date for one of the questions
+//Generate date object for one of the questions
 var todaysDate = new Date ();
 
 var allQuestions = [
@@ -24,6 +24,8 @@ var allQuestions = [
     [ 'The Daniel Boon museum at the home where he died can best be described how?', [ 'a log cabin in Kentucky', 'a two-story clapboard house in Tennessee', 'a four-story Georgian-style home in Missouri', 'a three story brick house in Arkansas' ], 2 ],
 
     [ 'Which of the following items was owned by the fewest U.S. homes in 1990?', [ 'home computer', 'compact disk player', 'cordless phone', 'dishwasher' ], 1 ],
+
+    ['What organism did environmental scientist, J.R. McNeill opine to have \"had more impact on the atmosphere than any other single organism in Earth\'s history.\"?',['The Cow', 'Thomas Midgley Jr.', 'Humanity', 'Me'], 1],
 
     [ 'Who holds the record for the most victories in a row on the professional golf tour?', [ 'Jack Nicklaus', 'Arnold Palmer', 'Byron Nelson', 'Ben Hogan' ], 2 ],
 
