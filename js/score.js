@@ -55,6 +55,6 @@ saveToLocal('allScores', allScores);
 for (var i = 0; i < 10; i++){
     var el = document.getElementById('high-score');
     var element = document.createElement('li');
-    element.innerText = 'Name:  ' + allScores[i].name + '   Score:  ' + allScores[i].score;
+    element.innerText = "   " + allScores[i].name + ':     ' + allScores[i].score + ' points';
     el.appendChild(element);
 }
