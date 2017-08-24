@@ -23,9 +23,17 @@ else{
 for (var i = 0; i < allPlayers.length; i++){
     allScores.push(allPlayers[i]);
 }
-//Display Player and score information on DOM
-// document.getElementById('player-name').innerText = getPlayer.name;
-// document.getElementById('player-score').innerText = getPlayer.score;
+
+//Sort allScores array in descending order
+allScores.sort(function aaa(x,y){
+    if (x.score > y.score){
+        return -1;
+    }
+    if (x.score < y.score){
+        return 1;
+    }
+    return 0;
+});
 
 //Add current player scores to allScores localStorage key
 saveToLocal('allScores', allScores);
