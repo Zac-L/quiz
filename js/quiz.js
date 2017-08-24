@@ -1,11 +1,13 @@
 var currentQuestion = [];
-var numberOfRounds = 3;
+var numberOfRounds = 2;
 var questionsInRound = 2;
 var questionsAsked = 0;
 var roundsCompleted = 0;
+var activePlayer = 0;
 var quiz = document.getElementById('quiz');
 
-var player = getFromLocal('playerOne');
+
+var allPlayers = getFromLocal('allPlayers');
 
 var allQuestions = [
     ['In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?', [ 'William and Elizabeth', 'Joseph and Catherine', 'John and Mary', 'George and Anne' ], 2 ],
@@ -81,55 +83,98 @@ el.addEventListener('submit', function(){
     event.preventDefault();
     quiz.style.opacity = 0;
     var el = document.getElementsByClassName('questionButton');
+
+    var roundT = document.getElementById('trans');
+
     //Run this if player seleced correct answer
     if (el[currentQuestion[2]].checked){
-        player.score++;
-        console.log('player is right');
+        allPlayers[activePlayer].score++;
         questionsAsked++;
     }
     //Run if player was incorrect
     else {
-        player.score--;
-        console.log('player is wrong');
+        allPlayers[activePlayer].score--;
         questionsAsked++;
     }
     event.target.reset();
-    var spliced = allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
 
-    //If there are still questions in the round
-    if (questionsAsked < questionsInRound ){
+    //Remove asked question from allQuestions array
+    allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
+
+    //Run if the player still needs to answer more questions in a round
+    if (questionsAsked < questionsInRound){
+        console.log('player still has more questions in round');
+        roundT.classList.remove('roundT');
+        clearAnimateText();
+
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
+<<<<<<< HEAD
         }, 900);
+=======
+        }, 500);
+>>>>>>> bd7c7d20618ef5cb098a395a9fb566ed2dc4f984
+    }
+    //Run if player has answered all questions in a round, then switches to next player. Also checks number of players
+    else if ((questionsAsked === questionsInRound) && (activePlayer < allPlayers.length - 1)) {
+        console.log('switching to next player');
+        activePlayer++;
+        questionsAsked = 0;
+
+        setTimeout(function() {
+            quiz.style.opacity = 1;
+            newQuestion();
+        }, 500);
+
     }
 
-    //If there are no more rounds left
-    else if (numberOfRounds === 1){
-        saveToLocal('playerOne', player);
-        console.log(localStorage.playerScore);
-
-        window.location.href = 'score.html';
-    }
-
-    //If there are no more questions in the round
+    //Run if all players have answered all questions in a round
     else {
+        console.log('all players have answered all question in the round');
         numberOfRounds--;
         roundsCompleted++;
+        activePlayer = 0;
         questionsAsked = 0;
-        console.log('number of rounds is now ' + numberOfRounds);
+        roundT.classList.add('roundT');
+        changeAnimateText();
+
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
+<<<<<<< HEAD
         }, 900);
+=======
+        }, 500);
+>>>>>>> bd7c7d20618ef5cb098a395a9fb566ed2dc4f984
     }
+    
 });
 
+//Main function to run code. Operates recursively. Navigates to score.html when end state is reached
 function newQuestion(){
-    //TO DO: get number of rounds to display correctly as "Round 1, Round 2,..."
-    document.getElementById('roundNumber').innerText = roundsCompleted + 1;
-    randomQuestionGen();
-    askQuestion();
+
+    //Check if number of rounds is 0. The game is over when there are no more rounds
+    if (numberOfRounds === 0){
+        saveToLocal('allPlayers', allPlayers);
+        window.location.href = 'score.html';
+    }
+    //If there are still rounds left, continue running game
+    else {
+        document.getElementById('roundNumber').innerText = roundsCompleted + 1;
+        randomQuestionGen();
+        askQuestion();
+    }
 }
 
+function changeAnimateText(){
+    document.getElementById('showRound').innerText = 'Round Number' + numberOfRounds;
+}
+
+function clearAnimateText(){
+    document.getElementById('showRound').innerText = '';
+
+}
+
+changeAnimateText();
 newQuestion();
