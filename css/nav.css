@@ -22,8 +22,8 @@
 	width:auto;
 }
 .dropdownmenu a {
-	background:rgba(255,255,255,.3);
-	color: rgba(255,255,255,.3);
+	/* background:rgba(255,255,255,.3); */
+	color: rgba(255,255,255,5);
 	display: block;
 	font: bold 12px/20px sans-serif;
 	padding: 10px 25px;
