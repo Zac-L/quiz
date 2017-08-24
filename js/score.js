@@ -12,7 +12,19 @@ function getFromLocal( key ) {
 
 //Run this if allScores doesn't exist in localStorage
 if ( !localStorage.allScores ) {
-    var allScores = [];
+    var allScores = [
+        //TO DO: make preset list of players and scores
+        {name: 'fake player name', score: 6},
+        {name: 'fake player name', score: 2},
+        {name: 'fake player name', score: 7},
+        {name: 'fake player name', score: 3},
+        {name: 'fake player name', score: 8},
+        {name: 'fake player name', score: 10},
+        {name: 'fake player name', score: 5},
+        {name: 'fake player name', score: 9},
+        {name: 'fake player name', score: 4},
+        {name: 'fake player name', score: 1},
+    ];
 }
 //Run if allScores is already in localStorage
 else{
@@ -40,7 +52,7 @@ saveToLocal('allScores', allScores);
 
 //Populate Score list table
 //TO DO (Stretch Goal): Turn this into a proper high score list. Rank players 1 through 10. Change whenever a new score is added.
-for (var i = 0; i < allScores.length; i++){
+for (var i = 0; i < 10; i++){
     var el = document.getElementById('high-score');
     var element = document.createElement('li');
     element.innerText = 'Name:  ' + allScores[i].name + '   Score:  ' + allScores[i].score;
