@@ -11,7 +11,7 @@
 
     </head>
     <body>
-         <header>
+        <header>
             <h1>Adventure Quiz!</h1>
             <nav>
                 <ul>
@@ -28,12 +28,12 @@
                         <ul>
                           <li><a href="index.html">Home</a></li>
                           <li><a href="quiz.html">Quiz</a>
-                          <ul id="submenu">
-                              <li><a href="score.html">Scores</a></li>
-                              <!-- <li><a href="#"></a></li>
-                              <li><a href="#"></a></li> -->
-                          </ul>
-                        </li>
+                            <ul id="submenu">
+                                <li><a href="score.html">Scores</a></li>
+                                <!-- <li><a href="#"></a></li>
+                                <li><a href="#"></a></li> -->
+                            </ul>
+                          </li>
                           <li><a href="about.html">About us</a></li>
                           <li><a href="#">Place Holder</a></li>
                           <li><a href="#">Place Holder</a></li>
@@ -41,8 +41,8 @@
                         <ul>
                             <li><a href="#">Contact</a></li>
                         </ul>
-                      </nav>
-                    </div>
+                    </nav>
+            </div>
         </header>
         
         <div id = 'trans' class = "roundT">
@@ -57,28 +57,35 @@
         </div>
 
         <div id="quiz">
-        <form id="question-form" action="">
-            <fieldset>
-                <legend>Quiz</legend>
+                <form id="question-form" action="">
+                    <fieldset>
+                        <legend></legend>
+                        <div class = "ques">
+                            <label id="questions"></label><br>
+                        </div>
+                        
+                        <div class="answ">
+                        <button  id="answer1"></button>
+                        <input name="question radio button" type = "hidden" class = "questionButton" name = "answer1" id = "answer1" >
 
-                <label id="questions"></label><br>
-                
-                <button  id="answer1"></button>
-                <input name="question radio button" type = "hidden" class = "questionButton" name = "answer1" id = "answer1" >
+                        <button  id="answer2"></button> 
+                        <input name="question radio button" type = "hidden" class = "questionButton" name = "answer2" id = "answer2" >
+                    </div>
 
-                <label  id="answer2"></label> 
-                <input name="question radio button" type = "radio" class = "questionButton" name = "answer2" id = "answer2" >
-                
-                <label  id= "answer3"></label>
-                <input name="question radio button" type = "radio" class = "questionButton" name = "answer3" id = "answer3" >
+                    <div class="answ">
+                        <button  id= "answer3"></button>
+                        <input name="question radio button" type = "hidden" class = "questionButton" name = "answer3" id = "answer3" >
 
-                <label  id= "answer4"></label>
-                <input name="question radio button" type = "radio" class = "questionButton" name = "answer4" id = "answer4" >
-
-                <input id="submit-answer" type="submit" ></input> 
+                        <button  id= "answer4"></button>
+                        <input name="question radio button" type = "hidden" class = "questionButton" name = "answer4" id = "answer4" >
+                    </div>
 
             </fieldset>
         </form>
         <script src="quiz.js"></script>
+                    </fieldset>
+                </form>
+            </div>
+        <script src="js/quiz.js"></script>
     </body>
 </html>
