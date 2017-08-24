@@ -119,7 +119,7 @@ el.addEventListener('submit', function(){
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-        }, 500);
+        }, 3000);
     }
     //Run if player has answered all questions in a round, then switches to next player. Also checks number of players
     else if ((questionsAsked === questionsInRound) && (activePlayer < allPlayers.length - 1)) {
@@ -132,7 +132,7 @@ el.addEventListener('submit', function(){
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-        }, 500);
+        }, 3000);
 
     }
 
@@ -147,13 +147,14 @@ el.addEventListener('submit', function(){
         questionsAsked = 0;
 
         //Animation code
+        roundT.style.display = 'block';
         roundT.classList.add('roundT');
         changeAnimateText();
 
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-        }, 500);
+        }, 2000);
     }
     
 });
@@ -184,6 +185,13 @@ function newQuestion(){
 
 function changeAnimateText(){
     document.getElementById('showRound').innerText = 'Round Number' + numberOfRounds;
+    setTimeout(function(){
+        var roundT = document.getElementById('trans');    
+        roundT.style.display = 'none';
+
+        console.log('remove');
+    }, 2000);
+
 }
 
 function clearAnimateText(){
