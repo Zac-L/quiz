@@ -80,7 +80,6 @@ resetButton.addEventListener('click',function(){
         {name: 'Goku', score: 400},
         {name: 'Times New Roman', score: 100},
     ];
-    console.log('in reset button listener');
     sortAllScores();
     saveToLocal('allScores', allScores);
     populateHiScore();

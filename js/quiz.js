@@ -13,11 +13,17 @@ var allPlayers = getFromLocal('allPlayers');
 var todaysDate = new Date ();
 
 var allQuestions = [
-    ['What day is it?', [(Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) - 1), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) + 1), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) - 2), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate())) ], 4],
+    ['What\s today\s date?', [(Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) - 1), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) + 1), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) - 2), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate())) ], 4],
 
     ['In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?', [ 'William and Elizabeth', 'Joseph and Catherine', 'John and Mary', 'George and Anne' ], 2 ],
 
     [ 'When did the Liberty Bell get its name?', [ 'when it was made, in 1701', 'when it rang on July 4, 1776', 'in the 19th century, when it became a symbol of the abolition of slavery', 'none of the above' ], 2],
+
+    [ 'How many known species of weasels exist today?', ['13', '19', '17', '14'], 2],
+
+    [ 'Which is NOT an alias for the famous pro wrestler Randy Poffo?', ['Macho Man Randy Savage', 'The Big Geno', 'Spider Friend', 'Parking Ticket'], 3],
+
+    [ 'What was bitcoin\'s USD value on July 8th 2011?', ['$11.50', '$2,9218.41', '$31.00', 'cryptocurrencies are illegal'], 2],
 
     [ 'In the Roy Rogers-Dale Evans Museum, you will find Roy and Dales stuffed horses. Roy\’s horse was named Trigger, which was Dales horse?', [ 'Buttermilk', 'Daisy', 'Scout', 'Tulip' ], 0 ],
 
