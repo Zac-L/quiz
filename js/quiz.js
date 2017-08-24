@@ -34,7 +34,7 @@ var allQuestions = [
 
     ['What did the “D” in “D-Day” stand for?', [ 'doom', 'day', 'Dwight (Eisenhower)', 'Dunkirk' ], 1 ],
 
-    [ '20. The Brownie Box Camera introduced by Eastman Kodak in 1900 had a retail price of what?', [ '$1', '$5', '$10', '$20' ], 0 ],
+    [ 'The Brownie Box Camera introduced by Eastman Kodak in 1900 had a retail price of what?', [ '$1', '$5', '$10', '$20' ], 0 ],
     
     [ 'Which of these characters turned 40 years old in 1990?', [ 'Charlie Brown', 'Bugs Bunny', 'Mickey Mouse', 'Fred Flintstone' ], 0 ],
 
