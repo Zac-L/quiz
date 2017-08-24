@@ -4,8 +4,8 @@ var questionsInRound = 2;
 var questionsAsked = 0;
 var roundsCompleted = 0;
 var activePlayer = 0;
+var points = 100;
 var quiz = document.getElementById('quiz');
-
 
 var allPlayers = getFromLocal('allPlayers');
 
@@ -94,12 +94,14 @@ el.addEventListener('submit', function(){
 
     //Run this if player seleced correct answer
     if (el[currentQuestion[2]].checked){
-        allPlayers[activePlayer].score++;
+        allPlayers[activePlayer].score += points;
+        // console.log(allPlayers[activePlayer].name + ' has ' + allPlayers[activePlayer].score + ' points');
         questionsAsked++;
     }
     //Run if player was incorrect
     else {
-        allPlayers[activePlayer].score--;
+        allPlayers[activePlayer].score -= points;
+        // console.log(allPlayers[activePlayer].name + ' has ' + allPlayers[activePlayer].score + ' points');
         questionsAsked++;
     }
     event.target.reset();
@@ -113,6 +115,7 @@ el.addEventListener('submit', function(){
         roundT.classList.remove('roundT');
         clearAnimateText();
 
+        //Animation code
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
@@ -125,6 +128,7 @@ el.addEventListener('submit', function(){
         changePlayerDisplay();
         questionsAsked = 0;
 
+        //Animation code
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
@@ -137,9 +141,12 @@ el.addEventListener('submit', function(){
         console.log('all players have answered all question in the round');
         numberOfRounds--;
         roundsCompleted++;
+        points += 100;
         activePlayer = 0;
         changePlayerDisplay();
         questionsAsked = 0;
+
+        //Animation code
         roundT.classList.add('roundT');
         changeAnimateText();
 
