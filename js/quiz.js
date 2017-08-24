@@ -166,6 +166,7 @@ function newQuestion(){
         saveToLocal('allPlayers', allPlayers);
         window.location.href = 'score.html';
         // console.log('THE END');
+
     }
     //If there are still rounds left, continue running game
     else {
