@@ -3,21 +3,36 @@
     <head>
         <meta charset="utf-8">
         <title>Adventure Quiz!</title>
-        <!-- <link href="style.css" type="text/css" rel="stylesheet">
-        <link rel="stylesheet" href="../sam-skeleton/css/normalize.css"> -->
+        <link href="css/nav.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <header>
             <h1>Adventure Quiz!</h1>
-            <nav>
+            <div id="navbar">
+            <nav class="dropdownmenu">
                 <ul>
                     <li class="nav-item"><a href="index.html">Home</a></li>
                     <li class="nav-item"><a href="quiz.html">Quiz</a></li>
                 </ul>
                 <ul>
                     <li class="nav-item"><a href="contact.html">Contact</a></li>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="quiz.html">Quiz</a>
+                  <ul id="submenu">
+                      <li><a href="score.html">Scores</a></li>
+                      <!-- <li><a href="#"></a></li>
+                      <li><a href="#"></a></li> -->
+                  </ul>
+                </li>
+                  <li><a href="about.html">About us</a></li>
+                  <li><a href="#">Place Holder</a></li>
+                  <li><a href="#">Place Holder</a></li>
                 </ul>
-            </nav>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
         </header>
         <section>
 
@@ -29,6 +44,13 @@
                 
                 <label for="name">Enter Player Name</label>
                 <input type="text" name="name" id="submit-input" placeholder="Enter Name">
+        <fieldset id="playerForm">
+        <legend>New Player</legend>
+        <form action="" id="add-player">
+                <label>Enter Player Name</label>
+                <input type="text" for="name" name="playerInput" placeholder="Name">
+                <button name="name" type="submit">Add Player</button>
+        </form>
 
                 <button id="submit-name" type="submit" onclick="window.open('quiz.html');" >GO!</button> 
 
@@ -46,6 +68,7 @@
 
             </fieldset>
         </form> -->
+        <ul id="players"></ul>
 
         <script src="app.js"></script>
         <p>Enter your choice of a name/username and press "GO!". You can also add up to 3 more players! 

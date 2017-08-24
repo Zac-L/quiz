@@ -4,8 +4,8 @@ var questionsInRound = 2;
 var questionsAsked = 0;
 var roundsCompleted = 0;
 var activePlayer = 0;
+var points = 100;
 var quiz = document.getElementById('quiz');
-
 
 var allPlayers = getFromLocal('allPlayers');
 
@@ -34,7 +34,7 @@ var allQuestions = [
 
     ['What did the “D” in “D-Day” stand for?', [ 'doom', 'day', 'Dwight (Eisenhower)', 'Dunkirk' ], 1 ],
 
-    [ '20. The Brownie Box Camera introduced by Eastman Kodak in 1900 had a retail price of what?', [ '$1', '$5', '$10', '$20' ], 0 ],
+    [ 'The Brownie Box Camera introduced by Eastman Kodak in 1900 had a retail price of what?', [ '$1', '$5', '$10', '$20' ], 0 ],
     
     [ 'Which of these characters turned 40 years old in 1990?', [ 'Charlie Brown', 'Bugs Bunny', 'Mickey Mouse', 'Fred Flintstone' ], 0 ],
 
@@ -58,6 +58,12 @@ function saveToLocal(key, value ) {
 
 function getFromLocal( key ) {
     return JSON.parse( localStorage.getItem( key ) );
+}
+
+//Switch active player displayed to DOM
+function changePlayerDisplay() {
+    var el = document.getElementById('currentPlayer');
+    el.innerText = allPlayers[activePlayer].name;
 }
 
 //Generates random question from allQuestions array, assigns is to currentQuestion variable
@@ -88,12 +94,14 @@ el.addEventListener('submit', function(){
 
     //Run this if player seleced correct answer
     if (el[currentQuestion[2]].checked){
-        allPlayers[activePlayer].score++;
+        allPlayers[activePlayer].score += points;
+        // console.log(allPlayers[activePlayer].name + ' has ' + allPlayers[activePlayer].score + ' points');
         questionsAsked++;
     }
     //Run if player was incorrect
     else {
-        allPlayers[activePlayer].score--;
+        allPlayers[activePlayer].score -= ( points / 2 );
+        // console.log(allPlayers[activePlayer].name + ' has ' + allPlayers[activePlayer].score + ' points');
         questionsAsked++;
     }
     event.target.reset();
@@ -107,6 +115,7 @@ el.addEventListener('submit', function(){
         roundT.classList.remove('roundT');
         clearAnimateText();
 
+        //Animation code
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
@@ -116,8 +125,10 @@ el.addEventListener('submit', function(){
     else if ((questionsAsked === questionsInRound) && (activePlayer < allPlayers.length - 1)) {
         console.log('switching to next player');
         activePlayer++;
+        changePlayerDisplay();
         questionsAsked = 0;
 
+        //Animation code
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
@@ -130,8 +141,12 @@ el.addEventListener('submit', function(){
         console.log('all players have answered all question in the round');
         numberOfRounds--;
         roundsCompleted++;
+        points += 100;
         activePlayer = 0;
+        changePlayerDisplay();
         questionsAsked = 0;
+
+        //Animation code
         roundT.classList.add('roundT');
         changeAnimateText();
 
@@ -145,11 +160,19 @@ el.addEventListener('submit', function(){
 
 //Main function to run code. Operates recursively. Navigates to score.html when end state is reached
 function newQuestion(){
+    //Display current active player to DOM
+    changePlayerDisplay();
+
+    //Update player score display to DOM
+    var playerScoreDisplay = document.getElementById('currentPlayerScore');
+    playerScoreDisplay.innerText = allPlayers[activePlayer].score;
 
     //Check if number of rounds is 0. The game is over when there are no more rounds
     if (numberOfRounds === 0){
         saveToLocal('allPlayers', allPlayers);
         window.location.href = 'score.html';
+        // console.log('THE END');
+
     }
     //If there are still rounds left, continue running game
     else {

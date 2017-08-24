@@ -1,6 +1,6 @@
 
 body, html{
-    width: 80%;
+    width: 100%;
 }
 
 .roundT{
@@ -34,4 +34,3 @@ body, html{
     -o-transition: opacity 1s ease-in;
     transition: opacity 1s ease-in;
 }
-
