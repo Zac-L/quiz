@@ -160,7 +160,13 @@ el.addEventListener('submit', function(){
 
 //Main function to run code. Operates recursively. Navigates to score.html when end state is reached
 function newQuestion(){
+    //Display current active player to DOM
     changePlayerDisplay();
+
+    //Update player score display to DOM
+    var playerScoreDisplay = document.getElementById('currentPlayerScore');
+    playerScoreDisplay.innerText = allPlayers[activePlayer].score;
+
     //Check if number of rounds is 0. The game is over when there are no more rounds
     if (numberOfRounds === 0){
         saveToLocal('allPlayers', allPlayers);
