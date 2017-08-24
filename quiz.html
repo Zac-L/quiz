@@ -4,19 +4,33 @@
         <meta charset="utf-8">
         <title>Adventure Quiz!</title>
 
+        <link href= "nav.css" type="text/css" rel="stylesheet">
         <link href= "quiz.css" type="text/css" rel="stylesheet">
 
     </head>
     <body>
          <header>
             <h1>Adventure Quiz!</h1>
-            <nav>
-                <ul>
-                    <li class="nav-item"><a href="index.html">Home</a></li>
-                    <li class="nav-item"><a href="quiz.html">Quiz</a></li>
-                    <li class="nav-item"><a href="about.html">About Us</a></li>
-                </ul>
-            </nav>
+            <div id="navbar">
+                    <nav class="dropdownmenu">
+                        <ul>
+                          <li><a href="index.html">Home</a></li>
+                          <li><a href="quiz.html">Quiz</a>
+                          <ul id="submenu">
+                              <li><a href="score.html">Scores</a></li>
+                              <!-- <li><a href="#"></a></li>
+                              <li><a href="#"></a></li> -->
+                          </ul>
+                        </li>
+                          <li><a href="about.html">About us</a></li>
+                          <li><a href="#">Place Holder</a></li>
+                          <li><a href="#">Place Holder</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                      </nav>
+                    </div>
         </header>
         
         <div id = 'trans' class = "roundT">
@@ -35,8 +49,8 @@
 
                 <label id="questions"></label><br>
                 
-                <label  id="answer1"></label>
-                <input name="question radio button" type = "radio" class = "questionButton" name = "answer1" id = "answer1" >
+                <button  id="answer1"></button>
+                <input name="question radio button" type = "hidden" class = "questionButton" name = "answer1" id = "answer1" >
 
                 <label  id="answer2"></label> 
                 <input name="question radio button" type = "radio" class = "questionButton" name = "answer2" id = "answer2" >

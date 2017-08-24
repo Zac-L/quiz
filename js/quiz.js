@@ -149,7 +149,7 @@ function newQuestion(){
     //Check if number of rounds is 0. The game is over when there are no more rounds
     if (numberOfRounds === 0){
         saveToLocal('allPlayers', allPlayers);
-        // window.location.href = 'score.html';
+        window.location.href = 'score.html';
         console.log('THE ENF');
     }
     //If there are still rounds left, continue running game
