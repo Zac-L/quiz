@@ -100,7 +100,7 @@ el.addEventListener('submit', function(){
     }
     //Run if player was incorrect
     else {
-        allPlayers[activePlayer].score -= points;
+        allPlayers[activePlayer].score -= ( points / 2 );
         // console.log(allPlayers[activePlayer].name + ' has ' + allPlayers[activePlayer].score + ' points');
         questionsAsked++;
     }

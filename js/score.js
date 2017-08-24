@@ -14,16 +14,16 @@ function getFromLocal( key ) {
 if ( !localStorage.allScores ) {
     var allScores = [
         //TO DO: make preset list of players and scores
-        {name: 'fake player name', score: 6},
-        {name: 'fake player name', score: 2},
-        {name: 'fake player name', score: 7},
-        {name: 'fake player name', score: 3},
-        {name: 'fake player name', score: 8},
-        {name: 'fake player name', score: 10},
-        {name: 'fake player name', score: 5},
-        {name: 'fake player name', score: 9},
-        {name: 'fake player name', score: 4},
-        {name: 'fake player name', score: 1},
+        {name: 'Owl', score: 600},
+        {name: 'Inanimate Carbon Rod', score: 200},
+        {name: '[deleted]', score: 700},
+        {name: 'the invisible hand of market', score: 300},
+        {name: 'Unpaid Intern', score: 800},
+        {name: 'two people in a horse costume', score: 1000},
+        {name: 'Eelon Musck', score: 500},
+        {name: 'Master Chief', score: 900},
+        {name: 'Goku', score: 400},
+        {name: 'a lamb', score: 100},
     ];
 }
 //Run if allScores is already in localStorage
