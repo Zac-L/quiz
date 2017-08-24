@@ -34,7 +34,7 @@ var allQuestions = [
 
     ['What did the “D” in “D-Day” stand for?', [ 'doom', 'day', 'Dwight (Eisenhower)', 'Dunkirk' ], 1 ],
 
-    [ '20. The Brownie Box Camera introduced by Eastman Kodak in 1900 had a retail price of what?', [ '$1', '$5', '$10', '$20' ], 0 ],
+    [ 'The Brownie Box Camera introduced by Eastman Kodak in 1900 had a retail price of what?', [ '$1', '$5', '$10', '$20' ], 0 ],
     
     [ 'Which of these characters turned 40 years old in 1990?', [ 'Charlie Brown', 'Bugs Bunny', 'Mickey Mouse', 'Fred Flintstone' ], 0 ],
 
@@ -110,11 +110,7 @@ el.addEventListener('submit', function(){
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-<<<<<<< HEAD
-        }, 900);
-=======
         }, 500);
->>>>>>> bd7c7d20618ef5cb098a395a9fb566ed2dc4f984
     }
     //Run if player has answered all questions in a round, then switches to next player. Also checks number of players
     else if ((questionsAsked === questionsInRound) && (activePlayer < allPlayers.length - 1)) {
@@ -142,11 +138,7 @@ el.addEventListener('submit', function(){
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
-<<<<<<< HEAD
-        }, 900);
-=======
         }, 500);
->>>>>>> bd7c7d20618ef5cb098a395a9fb566ed2dc4f984
     }
     
 });

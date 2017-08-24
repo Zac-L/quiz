@@ -28,14 +28,6 @@ body, html{
         }
 
 #quiz {
-<<<<<<< HEAD
-    -webkit-transition: opacity 0.5s ease-in;
-    -moz-transition: opacity 0.5s ease-in;
-    -ms-transition: opacity 0.5s ease-in;
-    -o-transition: opacity 0.5s ease-in;
-    transition: opacity 0.5s ease-in;
-}
-=======
     -webkit-transition: opacity 1s ease-in;
     -moz-transition: opacity 1s ease-in;
     -ms-transition: opacity 1s ease-in;
@@ -43,4 +35,3 @@ body, html{
     transition: opacity 1s ease-in;
 }
 
->>>>>>> bd7c7d20618ef5cb098a395a9fb566ed2dc4f984
