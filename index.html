@@ -21,19 +21,21 @@
 
         </section>
 
-        <form id="new-player" action="">
-            <fieldset>
-                <legend>New Player</legend>
-
-                <label for="name">Enter Player Name</label>
-                <input type="text" name="name" id="submit-input" placeholder="Enter Name">
-                <button id="add-player" type="submit">Add Player</button>
-                <button id="submit-name" type="submit" >GO!</button> 
-
-
-            </fieldset>
+        <fieldset>
+        <legend>New Player</legend>
+        <form action="" id="add-player">
+                <label>Enter Player Name</label>
+                <input type="text" for="name" name="playerInput" placeholder="Name">
+                <button name="name" type="submit">Add Player</button>
         </form>
-        
+
+
+        <form action="" id="start-game">
+                <button type="submit" >GO!</button> 
+        </form>
+        </fieldset>
+
+
         <script src="js/app.js"></script>
     </body>
 </html>
