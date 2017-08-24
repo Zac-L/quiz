@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <title>Adventure Quiz!</title>
 
-        <link href= "css/nav.css" type="text/css" rel="stylesheet">
         <link href= "css/quiz.css" type="text/css" rel="stylesheet">
+        <link href= "css/nav.css" type="text/css" rel="stylesheet">
 
     </head>
     <body>
+        <div class = "wrapper">
         <header>
             <h1>Adventure Quiz!</h1>
             <div id="navbar">
@@ -44,15 +45,15 @@
             <h2>Score: <span id="currentPlayerScore"></span></h2>
         </div>
 
-        <div id="quiz">
-                <form id="question-form" action="">
-                    <fieldset>
-                        <legend></legend>
-                        <div class = "ques">
-                            <label id="questions"></label><br>
-                        </div>
-                        
-                        <div class="answ">
+        <div id="quiz" class= "quizStyle">
+            <form id="question-form" action="">
+                <fieldset>
+                    <legend></legend>
+                    <div class = "ques">
+                        <label id="questions"></label><br>
+                    </div>
+                    
+                    <div class="answ">
                         <button  id="answer1"></button>
                         <input name="question radio button" type = "hidden" class = "questionButton" name = "answer1" id = "answer1" >
 
@@ -67,10 +68,10 @@
                         <button  id= "answer4"></button>
                         <input name="question radio button" type = "hidden" class = "questionButton" name = "answer4" id = "answer4" >
                     </div>
-
-                    </fieldset>
-                </form>
-            </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
         <script src="js/quiz.js"></script>
     </body>
 </html>
