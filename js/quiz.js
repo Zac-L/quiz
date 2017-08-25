@@ -256,10 +256,5 @@ function clearAnimateText(){
     document.getElementById('showRound').innerText = '';
 }
 
-// Animation code - TEMPORARY
-setTimeout(function() {
-    quiz.style.opacity = 1;
-    // newQuestion();
-}, 10000000);
 changeAnimateText();
 newQuestion();
