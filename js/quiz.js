@@ -162,7 +162,6 @@ el.addEventListener('submit', function(){
         questionsAsked++;
     }
     event.target.reset();
-    //TODO: Purge checked from all button elements
 
     //Remove asked question from allQuestions array
     allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
@@ -204,11 +203,12 @@ el.addEventListener('submit', function(){
         changePlayerDisplay();
         questionsAsked = 0;
 
-        //Animation code
+        // Animation code
         roundT.style.display = 'block';
         roundT.classList.add('roundT');
-        changeAnimateText();
-
+        if (numberOfRounds != 0 ){
+            changeAnimateText();
+        }
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
@@ -253,8 +253,9 @@ function changeAnimateText(){
 
 function clearAnimateText(){
     document.getElementById('showRound').innerText = '';
-
 }
+
+
 
 changeAnimateText();
 newQuestion();
