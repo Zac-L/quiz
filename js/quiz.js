@@ -81,19 +81,19 @@ var allQuestions = [
 
     ['In J. Edgar Hoover, what did the J stand for?', [ 'James', 'John', 'Joseph', 'Jack' ], 1 ],
 
-    [ 'Florence Nightingale became known as “the Lady With the Lamp” during which war?', [ 'American Civil War' , 'Crimean War', 'World War I', 'Korean War' ], 1 ],
+    [ 'Florence Nightingale became known as “the Lady With the Lamp” during which war?', [ 'American Civil War' , 'Crimean War', 'World War I', 'Korean War' ], 0 ],
 
-    [ 'What year was it that the Census Bureau first reported that a majority of new mothers were remaining in the new job market?', [ '1968', '1978', '1988', '2003' ], 2 ],
+    [ 'What year was it that the Census Bureau first reported that a majority of new mothers were remaining in the new job market?', [ '1968', '1978', '1988', '2003' ], 1 ],
 
     ['What is the name of the popular Australian food spread used on sandwiches, toast and pastries?' , ['Vegemite' , 'Jelly' , 'Jam' , 'Peanut Butter'] , 0],
 
     ['What is professional wrestler John Cena\'s famous catchphrase?' , ['I am John Cena!' , 'You can\'t see me!' , 'See ya later!' , 'Bye!'] , 2],
 
-    ['Who wrote the 1936 novel "Gone with the Wind"?' , ['That is a movie' , 'Margaret Mitchell' , 'Jon Snow' , 'Khaleesi'] , 2] ,
+    ['Who wrote the 1936 novel "Gone with the Wind"?' , ['That is a movie' , 'Margaret Mitchell' , 'Jon Snow' , 'Khaleesi'] , 1] ,
 
     ['Who painted a late 15th-century mural known as the Last Supper?' , ['Pablo Picasso' , 'Michaelangelo' , 'Vincent Van Gogh' , 'Leonardo Da Vinci'] , 4],
 
-    ['What is a baby turkey called?' , ['Poult/Chick' , 'Turkey' , 'Baby' , 'Baby Turkey'] , 1]
+    ['What is a baby turkey called?' , ['Poult/Chick' , 'Turkey' , 'Baby' , 'Baby Turkey'] , 0]
 ];
 
 function saveToLocal(key, value ) {
