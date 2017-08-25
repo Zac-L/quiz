@@ -85,7 +85,7 @@ var allQuestions = [
 
     [ 'What year was it that the Census Bureau first reported that a majority of new mothers were remaining in the new job market?', [ '1968', '1978', '1988', '2003' ], 2 ],
 
-    ['What is the name of the popular Australian food spread used on sandwiches, toast and pastries?' , ['Vegemite' , 'Jelly' , 'Jam' , 'Peanut Butter'] , 1],
+    ['What is the name of the popular Australian food spread used on sandwiches, toast and pastries?' , ['Vegemite' , 'Jelly' , 'Jam' , 'Peanut Butter'] , 0],
 
     ['What is professional wrestler John Cena\'s famous catchphrase?' , ['I am John Cena!' , 'You can\'t see me!' , 'See ya later!' , 'Bye!'] , 2],
 
