@@ -84,6 +84,8 @@ fieldset{
 	line-height: 1.2em;
 }
 
+button:focus {outline:0;}
+
 button:hover{
     background-color: rgba(255,255,255,.6);
 }

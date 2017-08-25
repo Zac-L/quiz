@@ -14,7 +14,7 @@
 	cursor: pointer;
 	font-size: 100%;
 	font-weight: 600;
-	line-height: 1.2em;
+    line-height: 1.2em;
 }
 
 #go {
@@ -47,6 +47,7 @@ input {
     font-weight: 400;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
+    outline:0;
 }
 
 /* #add-player {

@@ -96,6 +96,7 @@ var allQuestions = [
     ['What is a baby turkey called?' , ['Poult/Chick' , 'Turkey' , 'Baby' , 'Baby Turkey'] , 0]
 ];
 
+//Functions for saving/getting data from localStorage
 function saveToLocal(key, value ) {
     var localSavedData = JSON.stringify( value );
     localStorage.setItem( key, localSavedData );
@@ -142,10 +143,8 @@ for (var i = 0; i < questionButton.length; i++){
 el.addEventListener('submit', function(){
     event.preventDefault();
     quiz.style.opacity = 0;
-    console.log(answer.id);
 
     var numberForIfConditonal = Number(answer.id.slice(6)) - 1;
-    console.log(numberForIfConditonal);
 
     var roundT = document.getElementById('trans');
 
