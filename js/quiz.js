@@ -210,6 +210,9 @@ el.addEventListener('submit', function(){
         if (numberOfRounds != 0 ){
             changeAnimateText();
         }
+        if (numberOfRounds === 0 ){
+            TheEndChangeAnimateText();
+        }
         setTimeout(function() {
             quiz.style.opacity = 1;
             newQuestion();
@@ -244,6 +247,16 @@ function newQuestion(){
 
 function changeAnimateText(){
     document.getElementById('showRound').innerText = 'Round Number ' + (roundsCompleted + 1);
+    setTimeout(function(){
+        var roundT = document.getElementById('trans');
+        roundT.style.display = 'none';
+
+    }, 2000);
+
+}
+
+function TheEndChangeAnimateText(){
+    document.getElementById('showRound').innerText = 'THE END';
     setTimeout(function(){
         var roundT = document.getElementById('trans');
         roundT.style.display = 'none';
