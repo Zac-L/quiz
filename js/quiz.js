@@ -252,11 +252,21 @@ function changeAnimateText(){
 
 }
 
+function firstAnimateText(){
+    document.getElementById('showRoundF').innerText = 'Round Number ' + (roundsCompleted + 1);
+    setTimeout(function(){
+        var roundT = document.getElementById('trans');
+        roundT.style.display = 'none';
+        var roundF = document.getElementById('transF');
+        roundF.style.display = 'none';
+    }, 2000);
+}
+
 function clearAnimateText(){
     document.getElementById('showRound').innerText = '';
 }
 
 
 
-changeAnimateText();
+firstAnimateText();
 newQuestion();
