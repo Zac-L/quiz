@@ -86,13 +86,13 @@ var allQuestions = [
     [ 'What year was it that the Census Bureau first reported that a majority of new mothers were remaining in the new job market?', [ '1968', '1978', '1988', '2003' ], 2 ],
 
     ['What is the name of the popular Australian food spread used on sandwiches, toast and pastries?' , ['Vegemite' , 'Jelly' , 'Jam' , 'Peanut Butter'] , 1],
-    
+
     ['What is professional wrestler John Cena\'s famous catchphrase?' , ['I am John Cena!' , 'You can\'t see me!' , 'See ya later!' , 'Bye!'] , 2],
-    
+
     ['Who wrote the 1936 novel "Gone with the Wind"?' , ['That is a movie' , 'Margaret Mitchell' , 'Jon Snow' , 'Khaleesi'] , 2] ,
-    
+
     ['Who painted a late 15th-century mural known as the Last Supper?' , ['Pablo Picasso' , 'Michaelangelo' , 'Vincent Van Gogh' , 'Leonardo Da Vinci'] , 4],
-    
+
     ['What is a baby turkey called?' , ['Poult/Chick' , 'Turkey' , 'Baby' , 'Baby Turkey'] , 1]
 ];
 
@@ -130,26 +130,39 @@ function askQuestion() {
 
 //Event listener to check status of correct radio button, return score depending on user input
 var el = document.getElementById('question-form');
+var answer = null;
+
+var questionButton = document.getElementsByClassName('questionButton');
+for (var i = 0; i < questionButton.length; i++){
+    questionButton[i].addEventListener('click',function(){
+        answer = event.target;
+    });
+}
+
 el.addEventListener('submit', function(){
     event.preventDefault();
     quiz.style.opacity = 0;
-    var el = document.getElementsByClassName('questionButton');
+    console.log(answer.id);
+
+    var numberForIfConditonal = Number(answer.id.slice(6)) - 1;
+    console.log(numberForIfConditonal);
 
     var roundT = document.getElementById('trans');
 
     //Run this if player seleced correct answer
-    if (el[currentQuestion[2]].checked){
+    if (currentQuestion[2] === numberForIfConditonal){
         allPlayers[activePlayer].score += points;
-        // console.log(allPlayers[activePlayer].name + ' has ' + allPlayers[activePlayer].score + ' points');
+        console.log('correct',allPlayers[activePlayer].name + ' has ' + allPlayers[activePlayer].score + ' points');
         questionsAsked++;
     }
     //Run if player was incorrect
     else {
         allPlayers[activePlayer].score -= ( points / 2 );
-        // console.log(allPlayers[activePlayer].name + ' has ' + allPlayers[activePlayer].score + ' points');
+        console.log('incorrect ',allPlayers[activePlayer].name + ' has ' + allPlayers[activePlayer].score + ' points');
         questionsAsked++;
     }
     event.target.reset();
+    //TODO: Purge checked from all button elements
 
     //Remove asked question from allQuestions array
     allQuestions.splice( allQuestions.indexOf(currentQuestion), 1 );
@@ -234,7 +247,6 @@ function changeAnimateText(){
         var roundT = document.getElementById('trans');
         roundT.style.display = 'none';
 
-        console.log('remove');
     }, 2000);
 
 }
