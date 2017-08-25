@@ -1,10 +1,9 @@
 #navbar {
     margin: 0 auto;
     /* background-color: rgba(255,255,255,.3); */
-    display: flex;
+	display: flex;
     flex-direction: column;
     text-align: center;
-	/* width: 100%; */
 	vertical-align: baseline;
 }
 
