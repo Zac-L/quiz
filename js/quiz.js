@@ -53,7 +53,7 @@ var allQuestions = [
 
     ['A flamboyance is a group of what animal?' , ['Dog' , 'Mouse' , 'The word means elegant' , 'Flamingos'] , 4],
 
-    ['What is a group of whales called?' , ['No such thing' , 'A pod' , 'A group of whales' , 'Whales'] , 2],
+    ['What is a group of whales called?' , ['No such thing' , 'A pod' , 'A group of whales' , 'Whales'] , 1],
 
     ['What is the capital of Oregon?' , ['Salem' , 'Washington DC' , 'Mexico City' , 'Georgia'] , 1],
 
