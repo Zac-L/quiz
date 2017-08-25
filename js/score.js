@@ -6,14 +6,6 @@ else {
     var allPlayers = [];
 }
 
-function saveToLocal( key, value ) {
-    var localSavedData = JSON.stringify( value );
-    localStorage.setItem( key, localSavedData );
-}
-function getFromLocal( key ) {
-    return JSON.parse( localStorage.getItem( key ) );
-}
-
 //Run this if allScores doesn't exist in localStorage
 if ( !localStorage.allScores ) {
     var allScores = [
@@ -39,6 +31,15 @@ for (var i = 0; i < allPlayers.length; i++){
     allScores.push(allPlayers[i]);
 }
 
+//Functions for saving/getting data from localStorage
+function saveToLocal( key, value ) {
+    var localSavedData = JSON.stringify( value );
+    localStorage.setItem( key, localSavedData );
+}
+function getFromLocal( key ) {
+    return JSON.parse( localStorage.getItem( key ) );
+}
+
 //Sort allScores array in descending order
 function sortAllScores() {
     allScores.sort(function aaa(x,y){
@@ -52,30 +53,25 @@ function sortAllScores() {
     });
 }
 
-sortAllScores();
-
-//Add current player scores to allScores localStorage key
-saveToLocal('allScores', allScores);
-
 //Populate Score list table
 function populateHiScore (){
-    var el = document.getElementById('high-score-names');
-    el.innerHTML = '';
+    //Names
+    var nameElement = document.getElementById('high-score-names');
+    nameElement.innerHTML = '';
     for (var i = 0; i < 10; i++){
         var element = document.createElement('li');
         element.innerText = '   ' + allScores[i].name;
-        el.appendChild(element);
+        nameElement.appendChild(element);
     }
-
-    var element2 = document.getElementById('high-score-scores');
-    element2.innerHTML = '';
+    //Scores
+    var scoreElement = document.getElementById('high-score-scores');
+    scoreElement.innerHTML = '';
     for (var i = 0; i < 10; i++){
         var element = document.createElement('li');
         element.innerText = allScores[i].score + ' points';
-        element2.appendChild(element);
+        scoreElement.appendChild(element);
     }
 };
-populateHiScore();
 
 //Reset button event listener
 var resetButton = document.getElementById('reset');
@@ -102,3 +98,10 @@ var newGameButton = document.getElementById('new-game');
 newGameButton.addEventListener('click', function(){
     window.location.href = 'index.html';
 });
+
+sortAllScores();
+
+//Add current player scores to allScores localStorage key
+saveToLocal('allScores', allScores);
+
+populateHiScore();

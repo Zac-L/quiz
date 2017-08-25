@@ -2,37 +2,9 @@
 
 var allPlayers = [];
 
-function Game (difficulty, numberOfRounds, roundsPlayed, askedQuestions) {
-    this.difficulty = difficulty;
-    this.numberOfRounds = numberOfRounds;
-    this.roundsPlayed = roundsPlayed;
-    askedQuestions = askedQuestions;
-    setup();
-    displayName();
-    startGame();
-    newRound();
-    getResults();
-    displayScore();
-}
-
 function Player (name) {
     this.name = name;
     this.score = 0;
-    // this.consecutiveAnswers = consecutiveAnswers;
-}
-
-function Question (question, answer, subject) {
-    this.question = question;
-    this.answer = answer;
-    this.subject = subject;
-}
-
-function Round (activePlayer, numberOfQuestions, numberOfQuestionsAsked) {
-    this.activePlayer = activePlayer;
-    this.numberOfQuestions = numberOfQuestions;
-    this.numberOfQuestionsAsked = numberOfQuestionsAsked;
-    updateScore();
-    checkAnswer();
 }
 
 function saveToLocal(key, value ) {
@@ -77,6 +49,3 @@ startGame.addEventListener( 'submit', function(){
         location.href = 'quiz.html';
     }
 });
-
-//TODO: Add a "add player" button in addition to submit button. Return alert "at least one player required" if user hit submit without adding players
-//TODO: Display list of added players to index.html DOM
