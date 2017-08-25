@@ -4,7 +4,7 @@ var questionsInRound = 2;
 var questionsAsked = 0;
 var roundsCompleted = 0;
 var activePlayer = 0;
-var points = 100;
+var points = 300;
 var quiz = document.getElementById('quiz');
 
 var allPlayers = getFromLocal('allPlayers');
@@ -199,7 +199,7 @@ el.addEventListener('submit', function(){
         console.log('all players have answered all question in the round');
         numberOfRounds--;
         roundsCompleted++;
-        points += 100;
+        points += 300;
         activePlayer = 0;
         changePlayerDisplay();
         questionsAsked = 0;
