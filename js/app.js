@@ -18,7 +18,6 @@ function Game (difficulty, numberOfRounds, roundsPlayed, askedQuestions) {
 function Player (name) {
     this.name = name;
     this.score = 0;
-    // this.consecutiveAnswers = consecutiveAnswers;
 }
 
 function Question (question, answer, subject) {

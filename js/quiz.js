@@ -281,5 +281,4 @@ function clearAnimateText(){
 
 firstAnimateText();
 
-
 newQuestion();
