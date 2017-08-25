@@ -33,6 +33,16 @@ header{
 	transition: opacity 1s ease-in;
 }
 
+#beginningQuiz {
+    
+    /*  question animation */
+	-webkit-transition: opacity 1s ease-out;
+	-moz-transition: opacity 1s ease-out;
+	-ms-transition: opacity 1s ease-out;
+	-o-transition: opacity 1s ease-out;
+	transition: opacity 1s ease-out;
+}
+
 .quizStyle{
     max-width: 100%;
     margin: -10% auto;
