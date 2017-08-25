@@ -17,7 +17,7 @@ var allQuestions = [
 
     ['In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?', [ 'William and Elizabeth', 'Joseph and Catherine', 'John and Mary', 'George and Anne' ], 2 ],
 
-    [ 'When did the Liberty Bell get its name?', [ 'when it was made, in 1701', 'when it rang on July 4, 1776', 'in the 19th century, when it became a symbol of the abolition of slavery', 'none of the above' ], 2],
+    [ 'When did the Liberty Bell get its name?', [ 'when it was made, in 1701', 'when it rang on July 8th, 1776', 'in the 19th century, when it became a symbol of the abolition of slavery', 'none of the above' ], 2],
 
     [ 'How many known species of weasels exist today?', ['13', '19', '17', '14'], 2],
 
@@ -49,13 +49,13 @@ var allQuestions = [
 
     ['What is the largest species of terrestrial crab in the world?' , ['Crab' , 'Had no idea there were more than one species of crab' , 'Large Crab' , 'The Coconut Crab'] , 3],
 
-    ['Cynophobia is the fear of what kind of animal?' , ['Rats' , 'Tigers' , 'Lions' , 'Dogs'] , 4],
+    ['Cynophobia is the fear of what kind of animal?' , ['Rats' , 'Tigers' , 'Lions' , 'Dogs'] , 3],
 
-    ['A flamboyance is a group of what animal?' , ['Dog' , 'Mouse' , 'The word means elegant' , 'Flamingos'] , 4],
+    ['A flamboyance is a group of what animal?' , ['Dog' , 'Mouse' , 'The word means elegant' , 'Flamingos'] , 3],
 
     ['What is a group of whales called?' , ['No such thing' , 'A pod' , 'A group of whales' , 'Whales'] , 1],
 
-    ['What is the capital of Oregon?' , ['Salem' , 'Washington DC' , 'Mexico City' , 'Georgia'] , 1],
+    ['What is the capital of Oregon?' , ['Salem' , 'Washington DC' , 'Mexico City' , 'Georgia'] , 0],
 
     ['What did the “D” in “D-Day” stand for?', [ 'doom', 'day', 'Dwight (Eisenhower)', 'Dunkirk' ], 1 ],
 
@@ -87,11 +87,11 @@ var allQuestions = [
 
     ['What is the name of the popular Australian food spread used on sandwiches, toast and pastries?' , ['Vegemite' , 'Jelly' , 'Jam' , 'Peanut Butter'] , 0],
 
-    ['What is professional wrestler John Cena\'s famous catchphrase?' , ['I am John Cena!' , 'You can\'t see me!' , 'See ya later!' , 'Bye!'] , 2],
+    ['What is professional wrestler John Cena\'s famous catchphrase?' , ['I am John Cena!' , 'You can\'t see me!' , 'See ya later!' , 'Bye!'] , 1],
 
     ['Who wrote the 1936 novel "Gone with the Wind"?' , ['That is a movie' , 'Margaret Mitchell' , 'Jon Snow' , 'Khaleesi'] , 1] ,
 
-    ['Who painted a late 15th-century mural known as the Last Supper?' , ['Pablo Picasso' , 'Michaelangelo' , 'Vincent Van Gogh' , 'Leonardo Da Vinci'] , 4],
+    ['Who painted a late 15th-century mural known as the Last Supper?' , ['Pablo Picasso' , 'Michaelangelo' , 'Vincent Van Gogh' , 'Leonardo Da Vinci'] , 3],
 
     ['What is a baby turkey called?' , ['Poult/Chick' , 'Turkey' , 'Baby' , 'Baby Turkey'] , 0]
 ];
