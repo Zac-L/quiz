@@ -12,6 +12,7 @@ var allPlayers = getFromLocal('allPlayers');
 //Generate date object for one of the questions
 var todaysDate = new Date ();
 
+//Array of all possible questions, their possible answers, and the correct answer as an index number
 var allQuestions = [
     ['What\s today\s date?', [(Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) - 1), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) + 1), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate()) - 2), (Number(todaysDate.getMonth() + 1)) + '/' + (Number(todaysDate.getDate())) ], 4],
 
@@ -101,7 +102,6 @@ function saveToLocal(key, value ) {
     var localSavedData = JSON.stringify( value );
     localStorage.setItem( key, localSavedData );
 }
-
 function getFromLocal( key ) {
     return JSON.parse( localStorage.getItem( key ) );
 }
