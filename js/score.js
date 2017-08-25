@@ -16,7 +16,7 @@ if ( !localStorage.allScores ) {
         {name: 'Owl', score: 600},
         {name: 'Inanimate Carbon Rod', score: 200},
         {name: '[deleted]', score: 700},
-        {name: 'the invisible hand of market', score: 300},
+        {name: 'the invisible hand of the market', score: 300},
         {name: 'Unpaid Intern', score: 800},
         {name: 'two people in a horse costume', score: 1000},
         {name: 'Eelon Musck', score: 500},
