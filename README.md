@@ -1,4 +1,4 @@
-# Quiz Adventure (working title)
+# Quiz Adventure (~~working~~ permanent title)
 
 Quiz Adventure (working title) is a fun trivia web game. The player's knowledge is put to the test as they answer a series of trivia questions. Afterwards, they are given a results to page to show how they did.
 
