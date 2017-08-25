@@ -4,10 +4,13 @@
         <meta charset="utf-8">
         <title>Adventure Quiz!</title>
         <link href="css/nav.css" type="text/css" rel="stylesheet">
+        <link href="css/quiz.css" type="text/css" rel="stylesheet">
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     </head>
     <body>
+        <div class="wrapper">
         <header>
-            <h1>Adventure Quiz!</h1>
             <div id="navbar">
             <nav class="dropdownmenu">
                 <ul>
@@ -29,36 +32,43 @@
               </nav>
             </div>
         </header>
-        <section>
+        <section class="frontPage">
+                <h1>Adventure Quiz!</h1>
+        
+                <p>
+                        This is a trivia based quiz. The quiz is multi player and can have up to 4 players! Enter your choice of a name/username and press "GO!".  
+              
+                        The questions are multiple choice. To choose an answer, simply click on the box with the choice. 
+                
+                        The questions are topics you may not have seen or heard from anywhere, so be prepared!.
+
+               
+                         Play by yourself or challenge your friends! Read the questions and answer them to the best of your ability. When you finish this quiz, you will be afraid of your new intelligence. 
+                             Good luck!
+                </p>
 
         </section>
-
+<div id="playerInfo">
         <fieldset id="playerForm">
-        <legend>New Player</legend>
+        <!-- <legend>New Player</legend> -->
         <form action="" id="add-player">
                 <label>Enter Player Name</label>
-                <input type="text" for="name" name="playerInput" placeholder="Name">
-                <button name="name" type="submit">Add Player</button>
+        </br>
+                <input type="text" for="name" name="playerInput" placeholder="">
+                <button id="addPlayer"name="name" type="submit">Add Player</button>
         </form>
 
 
         <form action="" id="start-game">
-                <button type="submit" >GO!</button> 
+                <button id="go" type="submit" >GO!</button> 
         </form>
         </fieldset>
+</div>
 
         <ul id="players"></ul>
 
-        <p>
-                This is a trivia based quiz. The quiz is multi player and can have up to 4 players! Enter your choice of a name/username and press "GO!".  
-                The questions are multiple choice. To choose an answer, simply click on the box with the choice. 
-                
-                The questions are topics you may not have seen or heard from anywhere, so be prepared!.
-                 Play by yourself or challenge your friends! Read the questions and answer them to the best of your ability. When you finish this quiz, you will be afraid of your new intelligence.
-         
-                     Good luck!
-        </p>
 
+    </div>
         <script src="js/app.js"></script>
     </body>
 </html>

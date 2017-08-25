@@ -1,0 +1,204 @@
+#addPlayer {
+    appearance: none;
+	/* outline: 0; */
+	background-color: rgba(255,255,255,.3);
+	border: 1px;
+	border-style: solid;
+	border-color: rgba(255,255,255,.5);
+	margin: 1%;
+	/* padding: 1% 4%; */
+	color: white;
+	border-radius: 3px;
+	width: 10%;
+	height: 40px;
+	cursor: pointer;
+	font-size: 100%;
+	font-weight: 600;
+	line-height: 1.2em;
+}
+
+#go {
+    appearance: none;
+	/* outline: 0; */
+	background-color: rgba(255,255,255,.3);
+	border: 1px;
+	border-style: solid;
+	border-color: rgba(255,255,255,.5);
+	margin: 1%;
+	padding: 1% 4%;
+	color: white;
+	border-radius: 3px;
+	width: 45%;
+	height: 60px;
+	cursor: pointer;
+	font-size: 100%;
+	font-weight: 600;
+	line-height: 1.2em;
+}
+
+input {
+    margin: 1%;
+    width: 30%;
+    height: 40px;
+    background-color: rgba(255,255,255,.1);
+    color: rgba(255,255,255,.7);
+    border: none;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+/* #add-player {
+    display: flex;
+    justify-content: space-around;
+} */
+
+#playerInfo {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    font-size: 200%;
+    font-weight: 300;
+    color: rgba(255,255,255,.5);
+    font-family: 'Open Sans', sans-serif;
+}
+
+section {
+    background-color: rgba(255,255,255,.1);
+    color: rgba(255,255,255,.7);
+    padding: 3%;
+    height: auto;
+    /* display: flex;
+    justify-content: center; */
+    width: 60%;
+    margin: -2% auto 0 auto;
+    
+}
+
+section > h1 {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 200%;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+}
+
+section > p {
+    line-height: 2em;
+    font-size: 100%;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#players {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(255,255,255,.1);
+    color: rgba(255,255,255,.7);
+    font-size: 150%;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#players > li {
+    padding: 1%;
+    list-style: none;
+    float: none;
+    margin-left: -45px;
+    
+}
+
+/* High score styling */
+
+
+.scoreReset {
+    display: flex; 
+    justify-content: center;
+    
+}
+
+.scoreReset > button {
+    appearance: none;
+	background-color: rgba(255,255,255,.3);
+	border: 1px;
+	border-style: solid;
+	border-color: rgba(255,255,255,.5);
+	margin: 1%;
+	padding: 1% 4%;
+	color: white;
+	border-radius: 3px;
+	width: 25%;
+	height: 60px;
+	cursor: pointer;
+	font-size: 100%;
+	font-weight: 600;
+	line-height: 1.2em;
+}
+
+#finalScore {
+    background-color: rgba(255,255,255,.0);
+    color: rgba(255,255,255,.7);
+    padding: 3%;
+    height: auto;
+    /* display: flex;
+    justify-content: center; */
+    width: 60%;
+    margin: -2% auto 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+#finalScore > h1 {
+    margin: 0 auto -2% auto;
+    text-align: center;
+    font-size: 400%;
+    font-weight: 600;
+}
+
+
+.scoreTable {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+.scoreTable > ul {
+    margin-top: 0;
+    line-height: 2em;
+    font-size: 80%;
+    font-weight: 300;
+}
+
+.scoreTable > ul > li {
+    /* display: flex;
+    justify-content: center; */
+    height: 40px;
+    width: 100px;
+    background-color: rgba(255,255,255,.1);
+    color: white;
+    margin: 5px;
+    list-style: none;
+}
+
+.scoreTable > ol {
+    margin-top: 0;
+    line-height: 2em;
+    font-size: 80%;
+    font-weight: 300;
+}
+
+.scoreTable > ol > li {
+    height: 40px;
+    width: 220px;
+    background-color: rgba(255,255,255,.1);
+    color: white;
+    margin: 5px;
+    /* list-style: none; */
+}
+
+/* Styling for about us */
+

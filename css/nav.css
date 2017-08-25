@@ -1,10 +1,10 @@
 #navbar {
     margin: 0 auto;
     /* background-color: rgba(255,255,255,.3); */
-    display: flex;
+	display: flex;
     flex-direction: column;
     text-align: center;
-    /* width: 100%; */
+	vertical-align: baseline;
 }
 
 .dropdownmenu ul, .dropdownmenu li {
@@ -53,6 +53,7 @@ li:hover ul#submenu {
 	visibility: visible;
 }
 #submenu li {
+	text-align: center;
     /* display: flex;
     justify-content: center; */
 	float: none;
@@ -61,5 +62,8 @@ li:hover ul#submenu {
 	background: rgba(255,255,255,.3);
 }
 #submenu a {
+	display: flex;
+	align-content: center;
+	justify-content: center;
 	background-color:rgba(255,255,255,.1);
 }

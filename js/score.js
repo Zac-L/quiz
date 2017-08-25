@@ -55,12 +55,20 @@ saveToLocal('allScores', allScores);
 
 //Populate Score list table
 function populateHiScore (){
-    var el = document.getElementById('high-score');
+    var el = document.getElementById('high-score-names');
     el.innerHTML = '';
     for (var i = 0; i < 10; i++){
         var element = document.createElement('li');
-        element.innerText = '   ' + allScores[i].name + ':     ' + allScores[i].score + ' points';
+        element.innerText = '   ' + allScores[i].name;
         el.appendChild(element);
+    }
+
+    var element2 = document.getElementById('high-score-scores');
+    element2.innerHTML = '';
+    for (var i = 0; i < 10; i++){
+        var element = document.createElement('li');
+        element.innerText = allScores[i].score + ' points';
+        element2.appendChild(element);
     }
 };
 populateHiScore();

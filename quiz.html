@@ -6,59 +6,66 @@
 
         <link href= "css/nav.css" type="text/css" rel="stylesheet">
         <link href= "css/quiz.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
     </head>
     <body>
-        <div id = "trans" class = "roundT">
-            <h2><span id ="showRound"></span></h2>
-        </div>
         <div class = "wrapper">
+
         <header>
-            <h1></h1>
             <div id="navbar">
+
                     <nav class="dropdownmenu">
                         <ul>
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="quiz.html">Quiz</a>
-                            <ul id="submenu">
-                                <li><a href="score.html">Scores</a></li>
-                                <!-- <li><a href="#"></a></li>
-                                <li><a href="#"></a></li> -->
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="quiz.html">Quiz</a>
+                                <ul id="submenu">
+                                    <li><a href="score.html">Scores</a></li>
+                                    <!-- <li><a href="#"></a></li>
+                                        <li><a href="#"></a></li> -->
+                                    </ul>
+                                </li>
+                                <li><a href="about.html">About us</a></li>
+                                <li><a href="#">Place Holder</a></li>
+                                <li><a href="#">Place Holder</a></li>
                             </ul>
-                          </li>
-                          <li><a href="about.html">About us</a></li>
-                          <li><a href="#">Place Holder</a></li>
-                          <li><a href="#">Place Holder</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </nav>
-            </div>
-        </header>
-        
-
-
-        <div class = "gameStatus">
-            <h2>Round: <span class ="displayRound" id="roundNumber"></span></h2></br>
-            <h2>Player: <span id="currentPlayer"></span></h2></br>
-            <h2>Score: <span id="currentPlayerScore"></span></h2>
-        </div>
-
-        <div id="quiz" class= "quizStyle">
-            <form id="question-form" action="">
-                <fieldset>
-                    <legend></legend>
-                    <div class = "ques">
-                        <label id="questions"></label><br>
+                            <ul>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
                     </div>
-                    
-                    <div class="answ">
-                        <button class = "questionButton" id="answer1"> </button>
+
+                </header>
+                
+                
+                
+                <div id = "trans" class = "roundT">
+                    <h2><span id ="showRound"></span></h2>
+                </div>
+                <div class = "statusBox">
+                    <div class = "gameStatus">
+                        
+                        <h2>Round: <span class ="displayRound" id="roundNumber"></span></h2></br>
+                        <h2>Player: <span id="currentPlayer"></span></h2></br>
+                        <h2>Score: <span id="currentPlayerScore"></span></h2>  
+                    </div>
+                </div>
+                
+                <div id="quiz" class= "quizStyle">
+                    <form id="question-form" action="">
+                        <fieldset>
+                            <legend></legend>
+                            <div class = "ques">
+                                <label id="questions"></label><br>
+                            </div>
+                            
+                            <div class="answ">
+                                   <button class = "questionButton" id="answer1"> </button>
                         <input name="question radio button answer1" type = "hidden"   >
 
                         <button class = "questionButton" id="answer2"> </button> 
                         <input name="question radio button answer2" type = "hidden"   >
+                              
                     </div>
 
                     <div class="answ">

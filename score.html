@@ -4,10 +4,13 @@
         <meta charset="utf-8">
         <title>Score Table</title>
         <link href="css/nav.css" type="text/css" rel="stylesheet">
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="css/quiz.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     </head>
     <body>
+        <div class="wrapper">
         <header>
-                <h1>High Score</h1>
                 <div id="navbar">
                         <nav class="dropdownmenu">
                             <ul>
@@ -29,20 +32,20 @@
                           </nav>
                         </div>
         </header>
+    <section id="finalScore">
+        <h1>High Scores</h1>
+    </section>
+            <div class="scoreTable">
+                <ol id = "high-score-names"></ol>
+                <ul id = "high-score-scores"></ul>
+            </div>
 
-
-        <div>
-            <ol id = "high-score"></ol>
-        </div>
-
-        <div>
+        <div class="scoreReset">
             <button id = "reset">Reset Scores</button>
-        </div>
-
-        <div>
+        
             <button id = "new-game">New Game</button>
         </div>
-        
+    </div>
         <script src="js/score.js"></script>
     </body>
 </html>
