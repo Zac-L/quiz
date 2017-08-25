@@ -193,6 +193,7 @@ section > p {
 }
 
 .scoreTable > ul > li {
+    line-height: 40px;
     height: 40px;
     width: 100px;
     background-color: rgba(255,255,255,.1);
@@ -209,6 +210,7 @@ section > p {
 }
 
 .scoreTable > ol > li {
+    line-height: 40px;
     height: 40px;
     width: 220px;
     background-color: rgba(255,255,255,.1);
