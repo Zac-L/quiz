@@ -45,7 +45,7 @@ var allQuestions = [
 
     [ 'The first black American pictured on a U.S. postage stamp was who?', [ 'Frederick Douglass', 'Booker T. Washington', 'Louis Armstrong', 'Joe Louis' ], 3 ],
 
-    ['What creature\'s bite can lead to Lyme disease?' , ['Human' , 'Flea' , 'Tick' , 'No such creature exists'], 3],
+    ['What creature\'s bite can lead to Lyme disease?' , ['Human' , 'Flea' , 'Tick' , 'No such creature exists'], 2],
 
     ['What is the largest species of terrestrial crab in the world?' , ['Crab' , 'Had no idea there were more than one species of crab' , 'Large Crab' , 'The Coconut Crab'] , 4],
 
@@ -131,8 +131,9 @@ function askQuestion() {
 
 //Event listener to check status of correct radio button, return score depending on user input
 var el = document.getElementById('question-form');
-var answer = null;
 
+//Add event listeners to all four questionButton input elements
+var answer = null;
 var questionButton = document.getElementsByClassName('questionButton');
 for (var i = 0; i < questionButton.length; i++){
     questionButton[i].addEventListener('click',function(){
@@ -144,6 +145,7 @@ el.addEventListener('submit', function(){
     event.preventDefault();
     quiz.style.opacity = 0;
 
+    //Take 'answer#' id from DOM, remove all but last character & subtract by 1 so it reflects array answer index
     var numberForIfConditonal = Number(answer.id.slice(6)) - 1;
 
     var roundT = document.getElementById('trans');
