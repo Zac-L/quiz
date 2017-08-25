@@ -210,6 +210,7 @@ el.addEventListener('submit', function(){
         if (numberOfRounds != 0 ){
             changeAnimateText();
         }
+        //Run at the end of the game to show "THE END" screen
         if (numberOfRounds === 0 ){
             TheEndChangeAnimateText();
         }
@@ -255,6 +256,7 @@ function changeAnimateText(){
 
 }
 
+//Animation code
 function TheEndChangeAnimateText(){
     document.getElementById('showRound').innerText = 'THE END';
     setTimeout(function(){
@@ -264,7 +266,7 @@ function TheEndChangeAnimateText(){
     }, 2000);
 
 }
-
+//Animation code
 function firstAnimateText(){
     document.getElementById('showRoundF').innerText = 'Round Number ' + (roundsCompleted + 1);
     setTimeout(function(){
@@ -274,11 +276,10 @@ function firstAnimateText(){
         roundF.style.display = 'none';
     }, 2000);
 }
-
+//Animation code
 function clearAnimateText(){
     document.getElementById('showRound').innerText = '';
 }
 
 firstAnimateText();
-
 newQuestion();
