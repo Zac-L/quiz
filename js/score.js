@@ -80,7 +80,7 @@ populateHiScore();
 //Reset button event listener
 var resetButton = document.getElementById('reset');
 resetButton.addEventListener('click',function(){
-    var allScores = [
+    allScores = [
         {name: 'Owl', score: 299},
         {name: 'Inanimate Carbon Rod', score: -340},
         {name: '[deleted]', score: 419},
