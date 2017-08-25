@@ -47,7 +47,7 @@ var allQuestions = [
 
     ['What creature\'s bite can lead to Lyme disease?' , ['Human' , 'Flea' , 'Tick' , 'No such creature exists'], 2],
 
-    ['What is the largest species of terrestrial crab in the world?' , ['Crab' , 'Had no idea there were more than one species of crab' , 'Large Crab' , 'The Coconut Crab'] , 4],
+    ['What is the largest species of terrestrial crab in the world?' , ['Crab' , 'Had no idea there were more than one species of crab' , 'Large Crab' , 'The Coconut Crab'] , 3],
 
     ['Cynophobia is the fear of what kind of animal?' , ['Rats' , 'Tigers' , 'Lions' , 'Dogs'] , 4],
 
