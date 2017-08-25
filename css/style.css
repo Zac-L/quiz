@@ -26,6 +26,10 @@
     line-height: 1.2em;
 }
 
+#addPlayer:hover{
+    background-color: rgba(255,255,255,.6);
+}
+
 #go {
     appearance: none;
 	/* outline: 0; */
@@ -43,6 +47,10 @@
 	font-size: 100%;
 	font-weight: 600;
 	line-height: 1.2em;
+}
+
+#go:hover{
+    background-color: rgba(255,255,255,.6);
 }
 
 input {
