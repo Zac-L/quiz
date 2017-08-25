@@ -1,6 +1,10 @@
 'use strict';
-
-var allPlayers = getFromLocal('allPlayers');
+if (localStorage.allPlayers){
+    var allPlayers = getFromLocal('allPlayers');
+}
+else {
+    var allPlayers = [];
+}
 
 function saveToLocal( key, value ) {
     var localSavedData = JSON.stringify( value );
@@ -13,16 +17,16 @@ function getFromLocal( key ) {
 //Run this if allScores doesn't exist in localStorage
 if ( !localStorage.allScores ) {
     var allScores = [
-        {name: 'Owl', score: 600},
-        {name: 'Inanimate Carbon Rod', score: 200},
-        {name: '[deleted]', score: 700},
-        {name: 'the invisible hand of the market', score: 300},
-        {name: 'Unpaid Intern', score: 800},
-        {name: 'two people in a horse costume', score: 1000},
-        {name: 'Eelon Musck', score: 500},
-        {name: 'Master Chief', score: 900},
-        {name: 'Goku', score: 400},
-        {name: 'Helvetica', score: 100},
+        {name: 'Owl', score: 299},
+        {name: 'Inanimate Carbon Rod', score: -340},
+        {name: '[deleted]', score: 419},
+        {name: 'the invisible hand of the market', score: -1},
+        {name: 'Unpaid Intern', score: 589},
+        {name: 'two people in a horse costume', score: 999},
+        {name: 'Eelon Musck', score: 120},
+        {name: 'Master Chief', score: 600},
+        {name: 'Goku', score: 0},
+        {name: 'Helvetica', score: -600},
     ];
 }
 //Run if allScores is already in localStorage
@@ -76,17 +80,17 @@ populateHiScore();
 //Reset button event listener
 var resetButton = document.getElementById('reset');
 resetButton.addEventListener('click',function(){
-    allScores = [
-        {name: 'Owl', score: 600},
-        {name: 'Inanimate Carbon Rod', score: 200},
-        {name: '[deleted]', score: 700},
-        {name: 'the invisible hand of market', score: 300},
-        {name: 'Unpaid Intern', score: 800},
-        {name: 'two people in a horse costume', score: 1000},
-        {name: 'Eelon Musck', score: 500},
-        {name: 'Master Chief', score: 900},
-        {name: 'Goku', score: 400},
-        {name: 'Times New Roman', score: 100},
+    var allScores = [
+        {name: 'Owl', score: 299},
+        {name: 'Inanimate Carbon Rod', score: -340},
+        {name: '[deleted]', score: 419},
+        {name: 'the invisible hand of the market', score: -1},
+        {name: 'Unpaid Intern', score: 589},
+        {name: 'two people in a horse costume', score: 999},
+        {name: 'Eelon Musck', score: 120},
+        {name: 'Master Chief', score: 600},
+        {name: 'Goku', score: 0},
+        {name: 'Helvetica', score: -600},
     ];
     sortAllScores();
     saveToLocal('allScores', allScores);
