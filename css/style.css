@@ -77,11 +77,6 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     color:    rgba(255,255,255,.3);
 }
 
-/* #add-player {
-    display: flex;
-    justify-content: space-around;
-} */
-
 #playerInfo {
     margin-top: 3%;
     display: flex;
@@ -100,8 +95,6 @@ section {
     color: rgba(255,255,255,.7);
     padding: 3%;
     height: auto;
-    /* display: flex;
-    justify-content: center; */
     width: 60%;
     margin: -2% auto 0 auto;
     
@@ -172,8 +165,6 @@ section > p {
     color: rgba(255,255,255,.7);
     padding: 3%;
     height: auto;
-    /* display: flex;
-    justify-content: center; */
     width: 60%;
     margin: -2% auto 0 auto;
     font-family: 'Open Sans', sans-serif;
@@ -202,8 +193,6 @@ section > p {
 }
 
 .scoreTable > ul > li {
-    /* display: flex;
-    justify-content: center; */
     height: 40px;
     width: 100px;
     background-color: rgba(255,255,255,.1);
