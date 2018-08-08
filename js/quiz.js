@@ -207,7 +207,7 @@ el.addEventListener('submit', function(){
         // Animation code
         roundT.style.display = 'block';
         roundT.classList.add('roundT');
-        if (numberOfRounds != 0 ){
+        if (numberOfRounds !== 0 ){
             changeAnimateText();
         }
         //Run at the end of the game to show "THE END" screen
